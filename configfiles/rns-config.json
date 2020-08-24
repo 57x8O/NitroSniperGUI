@@ -1,0 +1,7 @@
+{
+  "main_token": "YOUR_TOKEN_HERE",
+  "snipe_on_main_token": true,
+  "sub_tokens": [],
+  "webhook": "",
+  "guild_blacklist": []
+}
