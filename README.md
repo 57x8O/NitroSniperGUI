@@ -19,6 +19,8 @@ Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without t
 
 3. Run NitroSniperGUI.exe
 
+4. Once opened, go to Tools and start your Nitro Sniper.
+
 
 
 ### Disclaimer
