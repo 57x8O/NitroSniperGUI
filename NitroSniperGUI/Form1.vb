@@ -36,7 +36,7 @@ Public Class Form1
 #Enable Warning BC42359
         Application.DoEvents()
 
-        'Updater
+        'InitialiUpdater
         Dim currentDirectory As New IO.DirectoryInfo(Environment.CurrentDirectory)
         If currentDirectory.Parent Is Nothing Then
             AutoUpdater.InstallationPath = currentDirectory.Parent.FullName
@@ -46,9 +46,8 @@ Public Class Form1
         AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
 
         Await Task.Delay(1000)
-        ' GoNitroSniperTitleBarWorkAround()
     End Function
-    Sub killChildrenProcessesOf(ByVal parentProcessId As UInt32)
+    Sub KillChildrenProcessesOf(ByVal parentProcessId As UInteger)
         Dim searcher As New ManagementObjectSearcher(
         "SELECT * " &
         "FROM Win32_Process " &
@@ -60,7 +59,7 @@ Public Class Form1
                 Dim childProcessId As Int32
                 childProcessId = Convert.ToInt32(item("ProcessId"))
                 If Not (childProcessId = Process.GetCurrentProcess().Id) Then
-                    killChildrenProcessesOf(CUInt(childProcessId))
+                    KillChildrenProcessesOf(CUInt(childProcessId))
                     Dim childProcess As Process
                     childProcess = Process.GetProcessById(childProcessId)
                     childProcess.Kill()
@@ -77,16 +76,16 @@ Public Class Form1
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Try
             p.Kill()
-            killChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
-            killChildrenProcessesOf(CUInt(p.Id))
-            killChildrenProcessesOf(CUInt(p2.Id))
+            KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
+            KillChildrenProcessesOf(CUInt(p.Id))
+            KillChildrenProcessesOf(CUInt(p2.Id))
         Catch ex As Exception
         End Try
     End Sub
     Public Sub GoNitroSniperTitleBarWorkAround()
         Try
             p.Kill()
-            killChildrenProcessesOf(CUInt(p.Id))
+            KillChildrenProcessesOf(CUInt(p.Id))
         Catch ex As Exception
         End Try
 
