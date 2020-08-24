@@ -26,3 +26,6 @@ Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without t
 ### Disclaimer
 This can get your account banned if you run multiple instance at the same time and/or claim too much Nitros in a too short amount of time. Use it at your own risk.
 I am not responsible in any damages or bans that may occur when using this application. Use it at your own risk.
+
+### Info
+Some Antivirus Products like AVG and Avast flag NitroSniperGUI.exe as IDP.Generic, duo to it having no signature.
