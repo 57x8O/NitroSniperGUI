@@ -45,60 +45,8 @@ Public Class Form1
         AutoUpdater.DownloadPath = Environment.CurrentDirectory
         AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
 
-        'Set Status
-        StatusBar.Style = ProgressBarStyle.Blocks
-        Status.Text = "Loading Executable into Form..."
-        StatusBar.Value = 10
-
-        'Set Location, Style and AutoScroll Settings
-        Location = New Point(CInt((Screen.PrimaryScreen.WorkingArea.Width / 2) - (Width / 2)), CInt((Screen.PrimaryScreen.WorkingArea.Height / 2) - (Height / 2)))
-        AutoScroll = False
-        Panel1.BorderStyle = BorderStyle.None
-        StatusBar.Value = 20
-        StatusBar.Style = ProgressBarStyle.Marquee
-        TopMost = True
-        Application.VisualStyleState = VisualStyles.VisualStyleState.NoneEnabled
-
-        'Set ProcessStartInfo
-        Dim pinfo As New ProcessStartInfo() With {
-                .FileName = Application.StartupPath + "\go-nitro-sniper.exe",
-                .WorkingDirectory = Application.StartupPath + "\", 'Working Dir Important since the App will crash without.
-               .WindowStyle = ProcessWindowStyle.Normal
-            }
-        p = Process.Start(pinfo)
-        Threading.Thread.Sleep(2000)
-        StatusBar.Value = 55
-        Status.Text = "Setting location and position..."
-
-        'Set Application inside Form1's Window
-        SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-        GetWindowRect(New HandleRef(p, p.MainWindowHandle), rct)
-        StatusBar.Value = 60
-
-        'Change Panel Height/Width to the corresponding Screen Hight/Width
-        'Panel1.AutoScrollMinSize = New Size(rct.AppsRight - rct.AppsLeft, rct.AppsBottom - rct.AppsTop)
-        Panel1.Width = (rct.AppsRight - rct.AppsLeft + 5)
-        Panel1.Height = (rct.AppsBottom - rct.AppsTop + 5)
-        StatusBar.Value = 60
-
-        'Set Application inside Form1's Window
-        SetParent(p.MainWindowHandle, Panel1.Handle)
-        SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
-        Panel1.Visible = True
-        Panel1.Focus()
-
-        StatusBar.Value = 70
-
-        'Wait half a second
-        Threading.Thread.Sleep(500)
-        StatusBar.Value = 100
-        Status.Text = "Loaded. To use additional Tools, open the Tools menu."
-
-        Refresh()
-
-        'Black Title Bar Work Around
         Await Task.Delay(1000)
-        GoNitroSniperTitleBarWorkAround()
+        ' GoNitroSniperTitleBarWorkAround()
     End Function
     Sub killChildrenProcessesOf(ByVal parentProcessId As UInt32)
         Dim searcher As New ManagementObjectSearcher(
@@ -136,8 +84,12 @@ Public Class Form1
         End Try
     End Sub
     Public Sub GoNitroSniperTitleBarWorkAround()
-        p.Kill()
-        killChildrenProcessesOf(CUInt(p.Id))
+        Try
+            p.Kill()
+            killChildrenProcessesOf(CUInt(p.Id))
+        Catch ex As Exception
+        End Try
+
         'Set ProcessStartInfo
         Dim pinfo As New ProcessStartInfo() With {
                 .FileName = Application.StartupPath + "\go-nitro-sniper.exe",
@@ -168,18 +120,11 @@ Public Class Form1
 
         Refresh()
     End Sub
-    Private Sub StartNitroGeneratorForTestPurposesOnlyToolStripMenuItem_Click(sender As Object, e As EventArgs)
-        'Del existing codes
-        Try
-            System.IO.File.Delete("C:\Nitro\codes.txt")
-        Catch ex As Exception
-        End Try
-
+    Private Sub StartRustNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartRustBasedNitroSniperToolStripMenuItem.Click
         'Set ProcessStartInfo
         Dim p2info As New ProcessStartInfo() With {
-                .FileName = "C:\Windows\System32\cmd.exe",
-                .Arguments = "/c mode 80,20 && cls && C:\Nitro\NitroGenerator.exe && pause",
-                .WorkingDirectory = "C:\Nitro\", 'Working Dir Important since the App will crash without
+                .FileName = Application.StartupPath + "\rust-nitro-sniper.exe",
+                .WorkingDirectory = Application.StartupPath + "\", 'Working Dir Important since the App will crash without.
                .WindowStyle = ProcessWindowStyle.Normal
             }
         p2 = Process.Start(p2info)
@@ -206,12 +151,18 @@ Public Class Form1
         Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
         Refresh()
-
-        p2.WaitForExit()
-        'Start codes.txt
-        Process.Start("C:\Nitro\codes.txt")
     End Sub
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
+    End Sub
+    Private Sub StartGoBasedNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartGoBasedNitroSniperToolStripMenuItem.Click
+        GoNitroSniperTitleBarWorkAround()
+    End Sub
+    Private Sub RustNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RustNitroSniperConfigToolStripMenuItem.Click
+        Process.Start(Application.StartupPath + "\rns-config.json")
+    End Sub
+
+    Private Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoNitroSniperConfigToolStripMenuItem.Click
+        Process.Start(Application.StartupPath + "\token.json")
     End Sub
 End Class
