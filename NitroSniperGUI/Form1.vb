@@ -2,7 +2,6 @@
 Option Strict On
 Imports System.Runtime.InteropServices, System.Management, AutoUpdaterDotNET
 Public Class Form1
-
     'Initialize MDI Variables and import Functions
     Private Const WM_SYSCOMMAND As Integer = &H112
     Private Const SC_MINIMIZE As Integer = &HF020
@@ -69,24 +68,43 @@ Public Class Form1
     End Sub
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
         If Not p Is Nothing Then
-            SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-            SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+            Try
+                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+            Catch ex As Exception
+                Status.Text = ex.Message
+            End Try
+
         End If
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
         Try
-            p.Kill()
-            KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
-            KillChildrenProcessesOf(CUInt(p.Id))
-            KillChildrenProcessesOf(CUInt(p2.Id))
+            If p Is Nothing Then
+            Else
+                'Kill remaining snipers
+                p.Kill()
+                KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
+                KillChildrenProcessesOf(CUInt(p.Id))
+                KillChildrenProcessesOf(CUInt(p2.Id))
+
+                For Each prog As Process In Process.GetProcesses
+                    If prog.ProcessName = "conhost" Then
+                        prog.Kill()
+                    End If
+                Next
+            End If
         Catch ex As Exception
         End Try
     End Sub
     Public Sub GoNitroSniperTitleBarWorkAround()
+        'Kill sniper first
         Try
-            p.Kill()
-            KillChildrenProcessesOf(CUInt(p.Id))
-        Catch ex As Exception
+            If p Is Nothing Then
+            Else
+                p.Kill()
+                KillChildrenProcessesOf(CUInt(p.Id))
+            End If
+        Catch ex As NullReferenceException
         End Try
 
         'Set ProcessStartInfo
@@ -100,26 +118,43 @@ Public Class Form1
         StatusBar.Value = 55
         Status.Text = "Setting location and position..."
 
-        'Set Application inside Form1's Window
-        SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-        GetWindowRect(New HandleRef(p, p.MainWindowHandle), rct)
-        StatusBar.Value = 60
+        Try
+            'Set Application inside Form1's Window
+            SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+            GetWindowRect(New HandleRef(p, p.MainWindowHandle), rct)
+            StatusBar.Value = 60
 
-        'Set Application inside Form1's Window
-        SetParent(p.MainWindowHandle, Panel1.Handle)
-        SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
-        Panel1.Visible = True
-        Panel1.Focus()
-        StatusBar.Value = 70
+            'Set Application inside Form1's Window
+            SetParent(p.MainWindowHandle, Panel1.Handle)
+            SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+            Panel1.Visible = True
+            Panel1.Focus()
+            StatusBar.Value = 70
 
-        'Wait half a second
-        Threading.Thread.Sleep(500)
-        StatusBar.Value = 100
-        Status.Text = "Loaded. To use additional Tools, open the Tools menu."
+            'Wait half a second
+            Threading.Thread.Sleep(500)
+            StatusBar.Value = 100
+            Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
-        Refresh()
+            Refresh()
+        Catch ex As Exception
+            MsgBox("The application quit unexpectedly. Maybe you forgot to change the config files?" + Environment.NewLine + Environment.NewLine + ex.Message)
+            Status.Text = ex.Message
+            StatusBar.Value = 0
+        End Try
+
     End Sub
     Private Sub StartRustNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartRustBasedNitroSniperToolStripMenuItem.Click
+        'Kill Sniper First
+        Try
+            If p2 Is Nothing Then
+            Else
+                p2.Kill()
+                KillChildrenProcessesOf(CUInt(p2.Id))
+            End If
+        Catch ex As NullReferenceException
+        End Try
+
         'Set ProcessStartInfo
         Dim p2info As New ProcessStartInfo() With {
                 .FileName = Application.StartupPath + "\rust-nitro-sniper.exe",
@@ -132,24 +167,30 @@ Public Class Form1
         StatusBar.Value = 55
         Status.Text = "Setting location and position..."
 
-        'Set Application inside Form1's Window
-        SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-        GetWindowRect(New HandleRef(p2, p2.MainWindowHandle), rct)
-        StatusBar.Value = 60
+        Try
+            'Set Application inside Form1's Window
+            SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+            GetWindowRect(New HandleRef(p2, p2.MainWindowHandle), rct)
+            StatusBar.Value = 60
 
-        'Set Application inside Form1's Window
-        SetParent(p2.MainWindowHandle, Panel1.Handle)
-        SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
-        Panel1.Visible = True
-        Panel1.Focus()
-        StatusBar.Value = 70
+            'Set Application inside Form1's Window
+            SetParent(p2.MainWindowHandle, Panel1.Handle)
+            SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+            Panel1.Visible = True
+            Panel1.Focus()
+            StatusBar.Value = 70
 
-        'Wait half a second
-        Threading.Thread.Sleep(500)
-        StatusBar.Value = 100
-        Status.Text = "Loaded. To use additional Tools, open the Tools menu."
+            'Wait half a second
+            Threading.Thread.Sleep(500)
+            StatusBar.Value = 100
+            Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
-        Refresh()
+            Refresh()
+        Catch ex As Exception
+            MsgBox("The application quit unexpectedly. Maybe you forgot to change the config files?" + Environment.NewLine + Environment.NewLine + ex.Message)
+            Status.Text = ex.Message
+            StatusBar.Value = 0
+        End Try
     End Sub
     Private Sub ExitToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles ExitToolStripMenuItem.Click
         Me.Close()
@@ -162,6 +203,11 @@ Public Class Form1
     End Sub
 
     Private Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoNitroSniperConfigToolStripMenuItem.Click
-        Process.Start(Application.StartupPath + "\token.json")
+        Try
+            Process.Start(Application.StartupPath + "\token.json")
+        Catch ex As Exception
+            MsgBox("Did you forgot to download the config files?" + Environment.NewLine + Environment.NewLine + ex.Message)
+        End Try
+
     End Sub
 End Class

@@ -29,19 +29,18 @@ Partial Class Form1
         Me.ToolStripDropDownButton1 = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
-        Me.ToolStripStatusLabel1 = New System.Windows.Forms.ToolStripStatusLabel()
-        Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.StartRustBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.StartGoBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfigFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.RustNitroSniperConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.GoNitroSniperConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StartGoBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.StartRustBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
         'StatusStrip1
         '
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolStripDropDownButton1, Me.ToolStripStatusLabel1})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolStripDropDownButton1})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 501)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.Size = New System.Drawing.Size(1129, 22)
@@ -52,8 +51,8 @@ Partial Class Form1
         'Status
         '
         Me.Status.Name = "Status"
-        Me.Status.Size = New System.Drawing.Size(39, 17)
-        Me.Status.Text = "Status"
+        Me.Status.Size = New System.Drawing.Size(35, 17)
+        Me.Status.Text = "Done"
         '
         'StatusBar
         '
@@ -81,40 +80,6 @@ Partial Class Form1
         Me.ToolStripSeparator1.Name = "ToolStripSeparator1"
         Me.ToolStripSeparator1.Size = New System.Drawing.Size(221, 6)
         '
-        'ToolStripStatusLabel1
-        '
-        Me.ToolStripStatusLabel1.Name = "ToolStripStatusLabel1"
-        Me.ToolStripStatusLabel1.Size = New System.Drawing.Size(539, 17)
-        Me.ToolStripStatusLabel1.Text = "Note, in Windows 10 in order to see the Title Bar, press on the Black Rectangle a" &
-    "bove the loading text."
-        '
-        'Panel1
-        '
-        Me.Panel1.AllowDrop = True
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.AutoSize = True
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 0)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1129, 501)
-        Me.Panel1.TabIndex = 1
-        Me.Panel1.TabStop = True
-        '
-        'StartRustBasedNitroSniperToolStripMenuItem
-        '
-        Me.StartRustBasedNitroSniperToolStripMenuItem.Name = "StartRustBasedNitroSniperToolStripMenuItem"
-        Me.StartRustBasedNitroSniperToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
-        Me.StartRustBasedNitroSniperToolStripMenuItem.Text = "Start Rust based Nitro Sniper"
-        '
-        'StartGoBasedNitroSniperToolStripMenuItem
-        '
-        Me.StartGoBasedNitroSniperToolStripMenuItem.Name = "StartGoBasedNitroSniperToolStripMenuItem"
-        Me.StartGoBasedNitroSniperToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
-        Me.StartGoBasedNitroSniperToolStripMenuItem.Text = "Start Go based Nitro Sniper"
-        '
         'ConfigFilesToolStripMenuItem
         '
         Me.ConfigFilesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.RustNitroSniperConfigToolStripMenuItem, Me.GoNitroSniperConfigToolStripMenuItem})
@@ -133,6 +98,33 @@ Partial Class Form1
         Me.GoNitroSniperConfigToolStripMenuItem.Name = "GoNitroSniperConfigToolStripMenuItem"
         Me.GoNitroSniperConfigToolStripMenuItem.Size = New System.Drawing.Size(202, 22)
         Me.GoNitroSniperConfigToolStripMenuItem.Text = "Go Nitro Sniper Config"
+        '
+        'StartGoBasedNitroSniperToolStripMenuItem
+        '
+        Me.StartGoBasedNitroSniperToolStripMenuItem.Name = "StartGoBasedNitroSniperToolStripMenuItem"
+        Me.StartGoBasedNitroSniperToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.StartGoBasedNitroSniperToolStripMenuItem.Text = "Start Go based Nitro Sniper"
+        '
+        'StartRustBasedNitroSniperToolStripMenuItem
+        '
+        Me.StartRustBasedNitroSniperToolStripMenuItem.Name = "StartRustBasedNitroSniperToolStripMenuItem"
+        Me.StartRustBasedNitroSniperToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.StartRustBasedNitroSniperToolStripMenuItem.Text = "Start Rust based Nitro Sniper"
+        '
+        'Panel1
+        '
+        Me.Panel1.AllowDrop = True
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.AutoSize = True
+        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 0)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1129, 501)
+        Me.Panel1.TabIndex = 1
+        Me.Panel1.TabStop = True
         '
         'Form1
         '
@@ -161,7 +153,6 @@ Partial Class Form1
     Friend WithEvents ToolStripDropDownButton1 As ToolStripDropDownButton
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ToolStripStatusLabel1 As ToolStripStatusLabel
     Friend WithEvents ConfigFilesToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents RustNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents GoNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
