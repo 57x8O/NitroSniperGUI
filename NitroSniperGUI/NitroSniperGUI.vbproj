@@ -83,11 +83,17 @@
     <Import Include="System.Threading.Tasks" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.vb">
+    <Compile Include="DefaultProgramsSettings.Designer.vb">
+      <DependentUpon>DefaultProgramsSettings.vb</DependentUpon>
+    </Compile>
+    <Compile Include="DefaultProgramsSettings.vb">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Form1.Designer.vb">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <Compile Include="MainMdiContainerForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="MainMdiContainerForm.Designer.vb">
+      <DependentUpon>MainMdiContainerForm.vb</DependentUpon>
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="My Project\AssemblyInfo.vb" />
@@ -108,8 +114,11 @@
     </Compile>
   </ItemGroup>
   <ItemGroup>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.vb</DependentUpon>
+    <EmbeddedResource Include="DefaultProgramsSettings.resx">
+      <DependentUpon>DefaultProgramsSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="MainMdiContainerForm.resx">
+      <DependentUpon>MainMdiContainerForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="My Project\Resources.resx">
       <Generator>VbMyResourcesResXFileCodeGenerator</Generator>
