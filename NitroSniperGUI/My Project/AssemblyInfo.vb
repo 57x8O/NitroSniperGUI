@@ -9,13 +9,13 @@ Imports System.Runtime.InteropServices
 ' Werte der Assemblyattribute überprüfen
 
 <Assembly: AssemblyTitle("Nitro Sniper GUI")>
-<Assembly: AssemblyDescription("")>
+<Assembly: AssemblyDescription("Let's you use and manage multiple Nitro Snipers.")>
 <Assembly: AssemblyCompany("")>
 <Assembly: AssemblyProduct("Nitro Sniper GUI")>
 <Assembly: AssemblyCopyright("")>
 <Assembly: AssemblyTrademark("")>
 
-<Assembly: ComVisible(False)>
+<Assembly: ComVisible(True)>
 
 'Die folgende GUID wird für die typelib-ID verwendet, wenn dieses Projekt für COM verfügbar gemacht wird.
 <Assembly: Guid("94e6299b-ee3c-4fef-9f44-cce9fdb00cc4")>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' indem Sie "*" wie unten gezeigt eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.0.0.1")>
-<Assembly: AssemblyFileVersion("2.0.0.1")>
+<Assembly: AssemblyVersion("2.1.0.0")>
+<Assembly: AssemblyFileVersion("2.1.0.0")>

@@ -1,12 +1,18 @@
 ﻿Public Class DefaultProgramsSettings
     Dim msg As String = "Restart to apply changes."
     Private Sub DefaultProgramsSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
+
+        Application.VisualStyleState = VisualStyles.VisualStyleState.ClientAreaEnabled
+
         If IO.File.Exists("C:\Windows\notepad.exe") Then
             NotepadWinBtn.Enabled = True
+            PictureBox3.Visible = True
         ElseIf IO.File.Exists("C:\Windows\System32\notepad.exe") Then
             NotepadSystem32Btn.Enabled = True
+            PictureBox2.Visible = True
         ElseIf IO.File.Exists("C:\Windows\write.exe") Then
             Writebtn.Enabled = True
+            PictureBox4.Visible = True
         End If
 
         'Checkboxes

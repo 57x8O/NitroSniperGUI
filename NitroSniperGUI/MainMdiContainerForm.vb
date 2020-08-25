@@ -2,11 +2,13 @@
 Option Strict On
 Imports System.Runtime.InteropServices, System.Management, AutoUpdaterDotNET
 Public Class MainMdiContainerForm
-    'Initialize MDI Variables and import Functions
+    'Initialize MDI Variables
     Private Const WM_SYSCOMMAND As Integer = &H112
     Private Const SC_MINIMIZE As Integer = &HF020
     Private Const SC_MAXIMIZE As Integer = &HF030
     Dim rct As RECT
+
+    'Initialize Process Variables
     Dim p As Process
     Dim p2 As Process
     Dim c1 As Process
@@ -31,10 +33,8 @@ Public Class MainMdiContainerForm
         Public AppsBottom As Integer
         ' y position of lower-right corner
     End Structure
-
 #Disable Warning BC42359
     Private Async Function Form1_LoadAsync(sender As Object, e As EventArgs) As Task Handles MyBase.Load
-#Enable Warning BC42359
         Application.DoEvents()
 
         'Initialize Updater
@@ -48,6 +48,7 @@ Public Class MainMdiContainerForm
 
         Await Task.Delay(1000)
     End Function
+#Enable Warning BC42359
     Sub KillChildrenProcessesOf(ByVal parentProcessId As UInteger)
         Dim searcher As New ManagementObjectSearcher(
         "SELECT * " &
@@ -103,7 +104,7 @@ Public Class MainMdiContainerForm
         Catch ex As Exception
         End Try
     End Sub
-    Public Sub GoNitroSniperTitleBarWorkAround()
+    Public Async Sub GoNitroSniperTitleBarWorkAround()
         'Kill sniper first
         Try
             If p Is Nothing Then
@@ -111,7 +112,7 @@ Public Class MainMdiContainerForm
                 p.Kill()
                 KillChildrenProcessesOf(CUInt(p.Id))
             End If
-        Catch ex As NullReferenceException
+        Catch ex As Exception
         End Try
 
         'Set ProcessStartInfo
@@ -139,8 +140,9 @@ Public Class MainMdiContainerForm
             StatusBar.Value = 70
 
             'Wait half a second
-            Threading.Thread.Sleep(500)
-            StatusBar.Value = 100
+            'Threading.Thread.Sleep(500)
+            Await Task.Delay(500)
+            StatusBar.Value = 0
             Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
             Refresh()
@@ -149,9 +151,8 @@ Public Class MainMdiContainerForm
             Status.Text = ex.Message
             StatusBar.Value = 0
         End Try
-
     End Sub
-    Private Sub StartRustNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartRustBasedNitroSniperToolStripMenuItem.Click
+    Private Async Sub StartRustNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartRustBasedNitroSniperToolStripMenuItem.Click
         'Kill Sniper First
         Try
             If p2 Is Nothing Then
@@ -159,7 +160,7 @@ Public Class MainMdiContainerForm
                 p2.Kill()
                 KillChildrenProcessesOf(CUInt(p2.Id))
             End If
-        Catch ex As NullReferenceException
+        Catch ex As Exception
         End Try
 
         'Set ProcessStartInfo
@@ -188,8 +189,8 @@ Public Class MainMdiContainerForm
             StatusBar.Value = 70
 
             'Wait half a second
-            Threading.Thread.Sleep(500)
-            StatusBar.Value = 100
+            Await Task.Delay(500)
+            StatusBar.Value = 0
             Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
             Refresh()
@@ -219,7 +220,7 @@ Public Class MainMdiContainerForm
                     Process.Start("C:\Windows\write.exe", Application.StartupPath + "\rns-config.json")
                 End If
             Catch ex As Exception
-                MsgBox("Did you forgot to download the config files?" + Environment.NewLine + "Tip. Create them by first opening the Rust-based Nitro Sniper." + Environment.NewLine + ex.Message, vbExclamation, "Config Files Missing")
+                MsgBox("Did you forget to download the config files?" + Environment.NewLine + Environment.NewLine + "Tip. Create them by first opening the Rust-based Nitro Sniper." + Environment.NewLine + Environment.NewLine + ex.Message, vbExclamation, "Config Files not created.")
             End Try
         ElseIf My.Settings.OpenInsde = True Then
             'Kill Notepad First
@@ -275,7 +276,7 @@ Public Class MainMdiContainerForm
 
                 'Wait half a second
                 Threading.Thread.Sleep(500)
-                StatusBar.Value = 100
+                StatusBar.Value = 0
                 Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
                 Refresh()
@@ -286,7 +287,7 @@ Public Class MainMdiContainerForm
             End Try
         End If
     End Sub
-    Private Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoNitroSniperConfigToolStripMenuItem.Click
+    Private Async Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoNitroSniperConfigToolStripMenuItem.Click
         If My.Settings.OpenOutside = True Then
             Try
                 If My.Settings.UseSystem = True Then
@@ -299,7 +300,23 @@ Public Class MainMdiContainerForm
                     Process.Start("C:\Windows\write.exe", Application.StartupPath + "\token.json")
                 End If
             Catch ex As Exception
-                MsgBox("Did you forgot to download the config files?" + Environment.NewLine + Environment.NewLine + ex.Message, vbExclamation, "Config Files Missing")
+                'MsgBox("Did you forgot to download the config files?" + Environment.NewLine + Environment.NewLine + ex.Message, vbExclamation, "Config Files Missing")
+                Dim response As MsgBoxResult = MsgBox("Did you forget to download the config files?" + Environment.NewLine + Environment.NewLine + "Press Yes to create them now, Press No to close this message." + Environment.NewLine + Environment.NewLine + ex.Message, CType(vbYesNo + vbExclamation, MsgBoxStyle), "Config Files Missing")
+                If response = Global.Microsoft.VisualBasic.MsgBoxResult.Yes Then
+
+                    ' Create or overwrite the file.
+                    IO.File.Create(Application.StartupPath + "\token.json").Dispose()
+
+                    ' Add text to the file.
+                    Dim objWriter As New IO.StreamWriter(Application.StartupPath + "\token.json", True)
+                    objWriter.WriteLine("{ ""token"": ""token here"" }")
+                    objWriter.Close()
+                    MsgBox("Config File created. Try to open the config again.", CType(vbInformation + vbOKOnly, MsgBoxStyle), "Config File")
+
+                End If
+
+                If response = MsgBoxResult.No Then
+                End If
             End Try
         ElseIf My.Settings.OpenInsde = True Then
             'Kill Notepad First
@@ -355,13 +372,13 @@ Public Class MainMdiContainerForm
                 StatusBar.Value = 70
 
                 'Wait half a second
-                Threading.Thread.Sleep(500)
-                StatusBar.Value = 100
+                Await Task.Delay(500)
+                StatusBar.Value = 0
                 Status.Text = "Loaded. To use additional Tools, open the Tools menu."
 
                 Refresh()
             Catch ex As Exception
-                Dim response As MsgBoxResult = MsgBox("Did you forgot to download the config files?" + Environment.NewLine + "Press Yes to create them now, Press No to close this message." + Environment.NewLine + ex.Message, CType(vbYesNo + vbExclamation, MsgBoxStyle), "Config Files Missing")
+                Dim response As MsgBoxResult = MsgBox("Did you forget to download the config files?" + Environment.NewLine + Environment.NewLine + "Press Yes to create them now, Press No to close this message." + Environment.NewLine + Environment.NewLine + ex.Message, CType(vbYesNo + vbExclamation, MsgBoxStyle), "Config Files Missing")
                 If response = Global.Microsoft.VisualBasic.MsgBoxResult.Yes Then
 
                     ' Create or overwrite the file.
@@ -384,30 +401,59 @@ Public Class MainMdiContainerForm
         'Go-based Sniper
         Try
             If p Is Nothing Then
-                Status.Text = "Command Minimize aborted. Window does not exist."
+                Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
             Else
                 StatusBar.Value = 50
                 SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-                StatusBar.Value = 100
+                StatusBar.Value = 0
                 Status.Text = "Windows Minimized."
             End If
 
         Catch ex As Exception
-            Status.Text = "Command Minimize aborted. Window does not exist."
+            Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
         End Try
 
         'Rust based Sniper
         Try
             If p2 Is Nothing Then
-                Status.Text = "Command Minimize aborted. Window does not exist."
+                Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
             Else
                 StatusBar.Value = 50
                 SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-                StatusBar.Value = 100
+                StatusBar.Value = 0
                 Status.Text = "Windows Minimized."
             End If
         Catch ex As Exception
-            Status.Text = "Command Minimize aborted. Window does not exist."
+            Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
+        End Try
+
+        'Go-based Sniper Config
+        Try
+            If c1 Is Nothing Then
+                Status.Text = "Config Window not minimized. Window does not exist."
+            Else
+                StatusBar.Value = 50
+                SendMessage(c1.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                StatusBar.Value = 0
+                Status.Text = "Windows Minimized."
+            End If
+
+        Catch ex As Exception
+            Status.Text = "Config Window not minimized. Window does not exist."
+        End Try
+
+        'Rust based Sniper Config
+        Try
+            If c2 Is Nothing Then
+                Status.Text = "Config Window not minimized. Window does not exist."
+            Else
+                StatusBar.Value = 50
+                SendMessage(c2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                StatusBar.Value = 0
+                Status.Text = "Windows Minimized."
+            End If
+        Catch ex As Exception
+            Status.Text = "Config Window not minimized. Window does not exist."
         End Try
     End Sub
     Private Sub MaximizeAllWindowsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizeAllWindowsToolStripMenuItem.Click
@@ -440,14 +486,99 @@ Public Class MainMdiContainerForm
             Status.Text = "Command Maximize aborted. Window does not exist."
         End Try
     End Sub
-
-    Private Sub InceptionMenuItem_Click(sender As Object, e As EventArgs) Handles InceptionMenuItem.Click
-        MsgBox("No")
-        Status.Text = "No inceptions for you."
-    End Sub
-
     Private Sub DefaultProgramSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultProgramSettingsToolStripMenuItem.Click
         DefaultProgramsSettings.Show()
         DefaultProgramsSettings.StartPosition = FormStartPosition.CenterParent
     End Sub
+    Private Sub HelpToolStripDropDownButton_Click(sender As Object, e As EventArgs) Handles HelpToolStripDropDownButton.Click
+        'Hide everything first before showing Help
+        Panel1.Visible = False
+        Status.Visible = False
+        StatusBar.Visible = False
+        HelpToolStripDropDownButton.Visible = False
+        ControlBox = False
+        StatusStrip1.Visible = False
+        FormBorderStyle = FormBorderStyle.None
+
+        'Welcome Message
+        MsgBox("Welcome to the Nitro Sniper GUI Help! Im here to introduce you to the features and functions, that you can use.", vbInformation, "Help")
+        FormBorderStyle = FormBorderStyle.Sizable
+
+        'Menu Strip Help
+        StatusStrip1.Visible = True
+        ToolToolStripDropDownButton.PerformClick()
+        ToolToolStripDropDownButton.ShowDropDown()
+        MsgBox("The main feature is the ability to Start, Minimize, Maximize and Change Programs and Config Files.", vbInformation, "Menu Strip Help")
+
+        'Status Text and Status Bar Help
+        ToolToolStripDropDownButton.Visible = False
+        ToolToolStripDropDownButton.HideDropDown()
+        Status.Visible = True
+        StatusBar.Visible = True
+        StatusBar.Style = ProgressBarStyle.Marquee
+        Status.Text = "Currently showing Help."
+        MsgBox("You can get a Status of the current operation to know what´s happening. Error Messages will also be shown on the Status.", vbInformation, "Status Text/Bar Help")
+        StatusBar.Value = 20
+        ToolToolStripDropDownButton.Visible = True
+        ToolToolStripDropDownButton.ShowDropDown()
+
+        'Exit Help
+        ExitToolStripMenuItem.BackColor = Color.Yellow
+        ControlBox = True
+        MsgBox("You can exit the application at any time by either:" + Environment.NewLine + Environment.NewLine + "Pressing Exit in the Tools menu" + Environment.NewLine + Environment.NewLine + "Hitting the Close Button in the upper right corner" + Environment.NewLine + Environment.NewLine + "Or by pressing Alt + F4.", vbInformation, "Exit Help")
+        ExitToolStripMenuItem.BackColor = Color.White
+        StatusBar.Value = 40
+
+        'Sniper Help
+        StartGoBasedNitroSniperToolStripMenuItem.BackColor = Color.Yellow
+        StartRustBasedNitroSniperToolStripMenuItem.BackColor = Color.Yellow
+        MsgBox("The main feature is to start Nitro Snipers and have them inside the Nitro Sniper GUI.", vbInformation, "Nitro Sniper Help")
+        StartGoBasedNitroSniperToolStripMenuItem.BackColor = Color.White
+        StartRustBasedNitroSniperToolStripMenuItem.BackColor = Color.White
+        StatusBar.Value = 55
+
+        'Config Help
+        ConfigFilesToolStripMenuItem.PerformClick()
+        ConfigFilesToolStripMenuItem.ShowDropDown()
+        GoNitroSniperConfigToolStripMenuItem.BackColor = Color.Yellow
+        RustNitroSniperConfigToolStripMenuItem.BackColor = Color.Yellow
+        ConfigFilesToolStripMenuItem.BackColor = Color.Yellow
+        MsgBox("You can also change the config files, to add sub-tokens or change settings.", vbInformation, "Config Help")
+        GoNitroSniperConfigToolStripMenuItem.BackColor = Color.White
+        RustNitroSniperConfigToolStripMenuItem.BackColor = Color.White
+        ConfigFilesToolStripMenuItem.BackColor = Color.White
+        StatusBar.Value = 75
+
+        'Window control help
+        ConfigFilesToolStripMenuItem.HideDropDown()
+        WindowControlsToolStripMenuItem.PerformClick()
+        WindowControlsToolStripMenuItem.ShowDropDown()
+        MinimizeAllWindowsToolStripMenuItem.BackColor = Color.Yellow
+        MaximizeAllWindowsToolStripMenuItem.BackColor = Color.Yellow
+        WindowControlsToolStripMenuItem.BackColor = Color.Yellow
+        MsgBox("You can minimize the Snipers and Config Windows to save screen space and also maximize them.", vbInformation, "Window Control Help")
+        MinimizeAllWindowsToolStripMenuItem.BackColor = Color.White
+        MaximizeAllWindowsToolStripMenuItem.BackColor = Color.White
+        WindowControlsToolStripMenuItem.BackColor = Color.White
+        StatusBar.Value = 90
+
+        'Settings Help
+        WindowControlsToolStripMenuItem.HideDropDown()
+        DefaultProgramSettingsToolStripMenuItem.BackColor = Color.Yellow
+        StatusBar.Value = 100
+        MsgBox("To change settings like if the config should be inside or outside the GUI, and what Config Editor to use, press on 'GUI Settings'", vbInformation, "Settings Help")
+        DefaultProgramSettingsToolStripMenuItem.BackColor = Color.White
+
+        'Help Done Msg
+        ToolToolStripDropDownButton.HideDropDown()
+        HelpToolStripDropDownButton.Visible = True
+        MsgBox("You can always go back and press on Help if you need it in the future again!" + Environment.NewLine + Environment.NewLine + "                                                                                           -Help", vbInformation, "Help")
+
+        'Change to default
+        Panel1.Visible = True
+        StatusBar.Value = 0
+        StatusBar.Style = ProgressBarStyle.Continuous
+        Status.Text = "Done"
+    End Sub
+
 End Class

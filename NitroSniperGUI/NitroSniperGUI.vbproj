@@ -147,5 +147,38 @@
   <ItemGroup>
     <None Include="Resources\10.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Info.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Stop.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Warning.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Control Panel.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\INI &amp; INF.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Multiple files.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Tree.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Write.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Notepad.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Default Application.ico" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Help.ico" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.VisualBasic.targets" />
 </Project>
