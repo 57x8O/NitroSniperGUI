@@ -35,13 +35,14 @@ Partial Class MainMdiContainerForm
         Me.StartGoBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartRustBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator2 = New System.Windows.Forms.ToolStripSeparator()
+        Me.WindowControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MaximizeAllWindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.MinimizeAllWindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator3 = New System.Windows.Forms.ToolStripSeparator()
         Me.DefaultProgramSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.Panel1 = New System.Windows.Forms.Panel()
-        Me.WindowControlsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MaximizeAllWindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.MinimizeAllWindowsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
+        Me.LicenseToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -49,7 +50,7 @@ Partial Class MainMdiContainerForm
         '
         Me.StatusStrip1.AllowMerge = False
         Me.StatusStrip1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolToolStripDropDownButton, Me.HelpToolStripDropDownButton})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolToolStripDropDownButton, Me.HelpToolStripDropDownButton, Me.LicenseToolStripDropDownButton})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
@@ -134,6 +135,25 @@ Partial Class MainMdiContainerForm
         Me.ToolStripSeparator2.Name = "ToolStripSeparator2"
         Me.ToolStripSeparator2.Size = New System.Drawing.Size(221, 6)
         '
+        'WindowControlsToolStripMenuItem
+        '
+        Me.WindowControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaximizeAllWindowsToolStripMenuItem, Me.MinimizeAllWindowsToolStripMenuItem})
+        Me.WindowControlsToolStripMenuItem.Name = "WindowControlsToolStripMenuItem"
+        Me.WindowControlsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
+        Me.WindowControlsToolStripMenuItem.Text = "Window Controls"
+        '
+        'MaximizeAllWindowsToolStripMenuItem
+        '
+        Me.MaximizeAllWindowsToolStripMenuItem.Name = "MaximizeAllWindowsToolStripMenuItem"
+        Me.MaximizeAllWindowsToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
+        Me.MaximizeAllWindowsToolStripMenuItem.Text = "Maximize all Windows"
+        '
+        'MinimizeAllWindowsToolStripMenuItem
+        '
+        Me.MinimizeAllWindowsToolStripMenuItem.Name = "MinimizeAllWindowsToolStripMenuItem"
+        Me.MinimizeAllWindowsToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
+        Me.MinimizeAllWindowsToolStripMenuItem.Text = "Minimize all Windows"
+        '
         'ToolStripSeparator3
         '
         Me.ToolStripSeparator3.Name = "ToolStripSeparator3"
@@ -169,24 +189,14 @@ Partial Class MainMdiContainerForm
         Me.Panel1.TabIndex = 1
         Me.Panel1.TabStop = True
         '
-        'WindowControlsToolStripMenuItem
+        'LicenseToolStripDropDownButton
         '
-        Me.WindowControlsToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.MaximizeAllWindowsToolStripMenuItem, Me.MinimizeAllWindowsToolStripMenuItem})
-        Me.WindowControlsToolStripMenuItem.Name = "WindowControlsToolStripMenuItem"
-        Me.WindowControlsToolStripMenuItem.Size = New System.Drawing.Size(224, 22)
-        Me.WindowControlsToolStripMenuItem.Text = "Window Controls"
-        '
-        'MaximizeAllWindowsToolStripMenuItem
-        '
-        Me.MaximizeAllWindowsToolStripMenuItem.Name = "MaximizeAllWindowsToolStripMenuItem"
-        Me.MaximizeAllWindowsToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.MaximizeAllWindowsToolStripMenuItem.Text = "Maximize all Windows"
-        '
-        'MinimizeAllWindowsToolStripMenuItem
-        '
-        Me.MinimizeAllWindowsToolStripMenuItem.Name = "MinimizeAllWindowsToolStripMenuItem"
-        Me.MinimizeAllWindowsToolStripMenuItem.Size = New System.Drawing.Size(192, 22)
-        Me.MinimizeAllWindowsToolStripMenuItem.Text = "Minimize all Windows"
+        Me.LicenseToolStripDropDownButton.Image = CType(resources.GetObject("LicenseToolStripDropDownButton.Image"), System.Drawing.Image)
+        Me.LicenseToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.LicenseToolStripDropDownButton.Name = "LicenseToolStripDropDownButton"
+        Me.LicenseToolStripDropDownButton.ShowDropDownArrow = False
+        Me.LicenseToolStripDropDownButton.Size = New System.Drawing.Size(66, 20)
+        Me.LicenseToolStripDropDownButton.Text = "License"
         '
         'MainMdiContainerForm
         '
@@ -225,4 +235,5 @@ Partial Class MainMdiContainerForm
     Friend WithEvents WindowControlsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MaximizeAllWindowsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents MinimizeAllWindowsToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents LicenseToolStripDropDownButton As ToolStripDropDownButton
 End Class

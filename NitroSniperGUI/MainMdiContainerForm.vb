@@ -581,4 +581,7 @@ Public Class MainMdiContainerForm
         Status.Text = "Done"
     End Sub
 
+    Private Sub LicenseToolStripDropDownButton_Click(sender As Object, e As EventArgs) Handles LicenseToolStripDropDownButton.Click
+        LicenseForm.ShowDialog()
+    End Sub
 End Class

@@ -89,6 +89,12 @@
     <Compile Include="DefaultProgramsSettings.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Include="LicenseForm.Designer.vb">
+      <DependentUpon>LicenseForm.vb</DependentUpon>
+    </Compile>
+    <Compile Include="LicenseForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="MainMdiContainerForm.vb">
       <SubType>Form</SubType>
     </Compile>
@@ -116,6 +122,9 @@
   <ItemGroup>
     <EmbeddedResource Include="DefaultProgramsSettings.resx">
       <DependentUpon>DefaultProgramsSettings.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="LicenseForm.resx">
+      <DependentUpon>LicenseForm.vb</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="MainMdiContainerForm.resx">
       <DependentUpon>MainMdiContainerForm.vb</DependentUpon>
