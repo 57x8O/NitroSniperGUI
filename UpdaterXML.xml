@@ -3,5 +3,5 @@
     <version>2.1.0.1</version>
     <url>https://github.com/PeterStrick/NitroSniperGUI/releases/download/v2.1.0.1/NitroSniperGUI.zip</url>
     <changelog>https://github.com/PeterStrick/NitroSniperGUI/releases</changelog>
-    <mandatory>false</mandatory>
+    <mandatory>true</mandatory>
 </item>
