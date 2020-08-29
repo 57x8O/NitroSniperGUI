@@ -10,9 +10,9 @@ Imports System.Runtime.InteropServices
 
 <Assembly: AssemblyTitle("Nitro Sniper GUI")>
 <Assembly: AssemblyDescription("Let's you use and manage multiple Nitro Snipers.")>
-<Assembly: AssemblyCompany("")>
+<Assembly: AssemblyCompany("github.com/PeterStrick/NitroSniperGUI")>
 <Assembly: AssemblyProduct("Nitro Sniper GUI")>
-<Assembly: AssemblyCopyright("")>
+<Assembly: AssemblyCopyright("Copyright ©  2020 Peter Strick")>
 <Assembly: AssemblyTrademark("")>
 
 <Assembly: ComVisible(True)>
@@ -31,5 +31,5 @@ Imports System.Runtime.InteropServices
 ' indem Sie "*" wie unten gezeigt eingeben:
 ' <Assembly: AssemblyVersion("1.0.*")>
 
-<Assembly: AssemblyVersion("2.1.0.2")>
-<Assembly: AssemblyFileVersion("2.1.0.2")>
+<Assembly: AssemblyVersion("2.2.0.0")>
+<Assembly: AssemblyFileVersion("2.2.0.0")>

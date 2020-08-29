@@ -32,25 +32,28 @@ Partial Class DefaultProgramsSettings
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.DefaultProgramsTab = New System.Windows.Forms.TabPage()
+        Me.NF3 = New System.Windows.Forms.Label()
+        Me.NF2 = New System.Windows.Forms.Label()
+        Me.NF1 = New System.Windows.Forms.Label()
+        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.WindowMgmntTab = New System.Windows.Forms.TabPage()
+        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
+        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
         Me.Label3 = New System.Windows.Forms.Label()
         Me.OutsideAppBtn = New System.Windows.Forms.RadioButton()
         Me.InsideAppBtn = New System.Windows.Forms.RadioButton()
         Me.SettingsTip = New System.Windows.Forms.ToolTip(Me.components)
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.DefaultProgramsTab.SuspendLayout()
-        Me.WindowMgmntTab.SuspendLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.WindowMgmntTab.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
@@ -94,9 +97,9 @@ Partial Class DefaultProgramsSettings
         Me.NotepadWinBtn.Enabled = False
         Me.NotepadWinBtn.Location = New System.Drawing.Point(9, 85)
         Me.NotepadWinBtn.Name = "NotepadWinBtn"
-        Me.NotepadWinBtn.Size = New System.Drawing.Size(144, 17)
+        Me.NotepadWinBtn.Size = New System.Drawing.Size(179, 17)
         Me.NotepadWinBtn.TabIndex = 3
-        Me.NotepadWinBtn.Text = "Notepad in C:\Windows\"
+        Me.NotepadWinBtn.Text = "Notepad (32-bit) in C:\Windows\"
         Me.NotepadWinBtn.UseVisualStyleBackColor = True
         '
         'Writebtn
@@ -133,6 +136,9 @@ Partial Class DefaultProgramsSettings
         '
         'DefaultProgramsTab
         '
+        Me.DefaultProgramsTab.Controls.Add(Me.NF3)
+        Me.DefaultProgramsTab.Controls.Add(Me.NF2)
+        Me.DefaultProgramsTab.Controls.Add(Me.NF1)
         Me.DefaultProgramsTab.Controls.Add(Me.PictureBox4)
         Me.DefaultProgramsTab.Controls.Add(Me.PictureBox3)
         Me.DefaultProgramsTab.Controls.Add(Me.PictureBox2)
@@ -151,6 +157,84 @@ Partial Class DefaultProgramsSettings
         Me.DefaultProgramsTab.Text = "Default Programs"
         Me.DefaultProgramsTab.UseVisualStyleBackColor = True
         '
+        'NF3
+        '
+        Me.NF3.AutoSize = True
+        Me.NF3.Location = New System.Drawing.Point(241, 112)
+        Me.NF3.Name = "NF3"
+        Me.NF3.Size = New System.Drawing.Size(68, 13)
+        Me.NF3.TabIndex = 13
+        Me.NF3.Text = "Not installed."
+        Me.SettingsTip.SetToolTip(Me.NF3, "Install WordPad in order to use this option.")
+        '
+        'NF2
+        '
+        Me.NF2.AutoSize = True
+        Me.NF2.Location = New System.Drawing.Point(241, 89)
+        Me.NF2.Name = "NF2"
+        Me.NF2.Size = New System.Drawing.Size(68, 13)
+        Me.NF2.TabIndex = 12
+        Me.NF2.Text = "Not installed."
+        Me.SettingsTip.SetToolTip(Me.NF2, "Install Notepad in order to use this option.")
+        '
+        'NF1
+        '
+        Me.NF1.AutoSize = True
+        Me.NF1.Location = New System.Drawing.Point(241, 66)
+        Me.NF1.Name = "NF1"
+        Me.NF1.Size = New System.Drawing.Size(68, 13)
+        Me.NF1.TabIndex = 11
+        Me.NF1.Text = "Not installed."
+        Me.SettingsTip.SetToolTip(Me.NF1, "Install Notepad in order to use this option.")
+        '
+        'PictureBox4
+        '
+        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
+        Me.PictureBox4.Location = New System.Drawing.Point(193, 109)
+        Me.PictureBox4.Name = "PictureBox4"
+        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox4.TabIndex = 10
+        Me.PictureBox4.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox4, "Opens the config file with Wordpad.")
+        Me.PictureBox4.Visible = False
+        '
+        'PictureBox3
+        '
+        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
+        Me.PictureBox3.Location = New System.Drawing.Point(193, 85)
+        Me.PictureBox3.Name = "PictureBox3"
+        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox3.TabIndex = 9
+        Me.PictureBox3.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox3, "Opens the config file with C:\Windows\Notepad.exe")
+        Me.PictureBox3.Visible = False
+        '
+        'PictureBox2
+        '
+        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
+        Me.PictureBox2.Location = New System.Drawing.Point(210, 63)
+        Me.PictureBox2.Name = "PictureBox2"
+        Me.PictureBox2.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox2.TabIndex = 8
+        Me.PictureBox2.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox2, "Opens the config file with C:\Windows\System32\Notepad.exe")
+        Me.PictureBox2.Visible = False
+        '
+        'PictureBox1
+        '
+        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
+        Me.PictureBox1.Location = New System.Drawing.Point(293, 40)
+        Me.PictureBox1.Name = "PictureBox1"
+        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox1.TabIndex = 7
+        Me.PictureBox1.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox1, "Let's the System choose, what to open JSON files with. You may be asked to choose" &
+        " a application yourself.")
+        '
         'WindowMgmntTab
         '
         Me.WindowMgmntTab.Controls.Add(Me.PictureBox5)
@@ -166,6 +250,28 @@ Partial Class DefaultProgramsSettings
         Me.WindowMgmntTab.TabIndex = 1
         Me.WindowMgmntTab.Text = "MDI Container Managment Settings"
         Me.WindowMgmntTab.UseVisualStyleBackColor = True
+        '
+        'PictureBox5
+        '
+        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
+        Me.PictureBox5.Location = New System.Drawing.Point(232, 85)
+        Me.PictureBox5.Name = "PictureBox5"
+        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox5.TabIndex = 12
+        Me.PictureBox5.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox5, "Opens the Editor Window outside Nitro Sniper GUI.")
+        '
+        'PictureBox6
+        '
+        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
+        Me.PictureBox6.Location = New System.Drawing.Point(225, 51)
+        Me.PictureBox6.Name = "PictureBox6"
+        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
+        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox6.TabIndex = 11
+        Me.PictureBox6.TabStop = False
+        Me.SettingsTip.SetToolTip(Me.PictureBox6, "Opens the Editor Window inside Nitro Sniper GUI.")
         '
         'Label4
         '
@@ -216,76 +322,6 @@ Partial Class DefaultProgramsSettings
         Me.SettingsTip.ReshowDelay = 350
         Me.SettingsTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
-        'PictureBox1
-        '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(293, 40)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox1, "Let's the System choose, what to open JSON files with. You may be asked to choose" &
-        " a application yourself.")
-        '
-        'PictureBox2
-        '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(210, 63)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 8
-        Me.PictureBox2.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox2, "Opens the config file with C:\Windows\System32\Notepad.exe")
-        Me.PictureBox2.Visible = False
-        '
-        'PictureBox3
-        '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(159, 86)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 9
-        Me.PictureBox3.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox3, "Opens the config file with C:\Windows\Notepad.exe")
-        Me.PictureBox3.Visible = False
-        '
-        'PictureBox4
-        '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(193, 109)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox4.TabIndex = 10
-        Me.PictureBox4.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox4, "Opens the config file with Wordpad.")
-        Me.PictureBox4.Visible = False
-        '
-        'PictureBox5
-        '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(232, 85)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox5.TabIndex = 12
-        Me.PictureBox5.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox5, "Opens the Editor Window outside Nitro Sniper GUI.")
-        '
-        'PictureBox6
-        '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(225, 51)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox6, "Opens the Editor Window inside Nitro Sniper GUI.")
-        '
         'DefaultProgramsSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -303,12 +339,12 @@ Partial Class DefaultProgramsSettings
         Me.TabControl1.ResumeLayout(False)
         Me.DefaultProgramsTab.ResumeLayout(False)
         Me.DefaultProgramsTab.PerformLayout()
+        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
         Me.WindowMgmntTab.ResumeLayout(False)
         Me.WindowMgmntTab.PerformLayout()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
@@ -335,4 +371,7 @@ Partial Class DefaultProgramsSettings
     Friend WithEvents PictureBox1 As PictureBox
     Friend WithEvents PictureBox5 As PictureBox
     Friend WithEvents PictureBox6 As PictureBox
+    Friend WithEvents NF3 As Label
+    Friend WithEvents NF2 As Label
+    Friend WithEvents NF1 As Label
 End Class

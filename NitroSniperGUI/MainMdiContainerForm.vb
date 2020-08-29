@@ -11,8 +11,10 @@ Public Class MainMdiContainerForm
     'Initialize Process Variables
     Dim p As Process
     Dim p2 As Process
+    Dim p3 As Process
     Dim c1 As Process
     Dim c2 As Process
+    Dim c3 As Process
     <DllImport("user32.dll")>
     Public Shared Function SetParent(ByVal hWndChild As IntPtr, ByVal hWndNewParent As IntPtr) As Integer
     End Function
@@ -79,6 +81,10 @@ Public Class MainMdiContainerForm
                 'Rust based Sniper
                 SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
                 SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+
+                'Python based Sniper
+                SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
             Catch ex As Exception
                 Status.Text = ex.Message
             End Try
@@ -94,6 +100,7 @@ Public Class MainMdiContainerForm
                 KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
                 KillChildrenProcessesOf(CUInt(p.Id))
                 KillChildrenProcessesOf(CUInt(p2.Id))
+                KillChildrenProcessesOf(CUInt(p3.Id))
 
                 For Each prog As Process In Process.GetProcesses
                     If prog.ProcessName = "conhost" Then
@@ -333,17 +340,17 @@ Public Class MainMdiContainerForm
             Dim Arguments As String = ""
 
             If My.Settings.UseSystem = True Then
-                Filename = Application.StartupPath + "\rns-config.json"
+                Filename = Application.StartupPath + "\token.json"
                 Arguments = ""
             ElseIf My.Settings.NotepadSystem32 = True Then
                 Filename = "C:\Windows\System32\notepad.exe"
-                Arguments = Application.StartupPath + "\rns-config.json"
+                Arguments = Application.StartupPath + "\token.json"
             ElseIf My.Settings.NotepadWin = True Then
                 Filename = "C:\Windows\notepad.exe"
-                Arguments = Application.StartupPath + "\rns-config.json"
+                Arguments = Application.StartupPath + "\token.json"
             ElseIf My.Settings.WriteWin = True Then
                 Filename = "C:\Windows\write.exe"
-                Arguments = Application.StartupPath + "\rns-config.json"
+                Arguments = Application.StartupPath + "\token.json"
             End If
 
             'Set ProcessStartInfo
@@ -398,92 +405,187 @@ Public Class MainMdiContainerForm
         End If
     End Sub
     Private Sub MinimizeAllWindowsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MinimizeAllWindowsToolStripMenuItem.Click
+        Dim config = "Config Window not minimized. Window does not exist."
+        Dim abort = "Command Minimize aborted. Window does not exist."
+        Dim success = "Windows minimized."
+        Dim action = SC_MINIMIZE
+
         'Go-based Sniper
         Try
             If p Is Nothing Then
-                Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
+                Status.Text = abort
             Else
                 StatusBar.Value = 50
-                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-                StatusBar.Value = 0
-                Status.Text = "Windows Minimized."
+                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 100
+                Status.Text = success
             End If
 
         Catch ex As Exception
-            Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
+            Status.Text = abort
         End Try
 
         'Rust based Sniper
         Try
             If p2 Is Nothing Then
-                Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
+                Status.Text = abort
             Else
                 StatusBar.Value = 50
-                SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
-                StatusBar.Value = 0
-                Status.Text = "Windows Minimized."
+                SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 100
+                Status.Text = success
             End If
         Catch ex As Exception
-            Status.Text = "Nitro Sniper Window not minimized. Window does not exist."
+            Status.Text = abort
+        End Try
+
+        'Python based Sniper
+        Try
+            If p3 Is Nothing Then
+                Status.Text = abort
+            Else
+                StatusBar.Value = 50
+                SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 100
+                Status.Text = success
+            End If
+        Catch ex As Exception
+            Status.Text = abort
         End Try
 
         'Go-based Sniper Config
         Try
             If c1 Is Nothing Then
-                Status.Text = "Config Window not minimized. Window does not exist."
+                Status.Text = config
             Else
                 StatusBar.Value = 50
-                SendMessage(c1.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                SendMessage(c1.MainWindowHandle, WM_SYSCOMMAND, action, 0)
                 StatusBar.Value = 0
-                Status.Text = "Windows Minimized."
+                Status.Text = success
             End If
 
         Catch ex As Exception
-            Status.Text = "Config Window not minimized. Window does not exist."
+            Status.Text = config
         End Try
 
         'Rust based Sniper Config
         Try
             If c2 Is Nothing Then
-                Status.Text = "Config Window not minimized. Window does not exist."
+                Status.Text = config
             Else
                 StatusBar.Value = 50
-                SendMessage(c2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                SendMessage(c2.MainWindowHandle, WM_SYSCOMMAND, action, 0)
                 StatusBar.Value = 0
-                Status.Text = "Windows Minimized."
+                Status.Text = success
             End If
         Catch ex As Exception
-            Status.Text = "Config Window not minimized. Window does not exist."
+            Status.Text = config
+        End Try
+
+        'Python based Sniper Config
+        Try
+            If c3 Is Nothing Then
+                Status.Text = config
+            Else
+                StatusBar.Value = 50
+                SendMessage(c3.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 0
+                Status.Text = success
+            End If
+        Catch ex As Exception
+            Status.Text = config
         End Try
     End Sub
     Private Sub MaximizeAllWindowsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles MaximizeAllWindowsToolStripMenuItem.Click
+        Dim config = "Config Window not maximized. Window does not exist."
+        Dim abort = "Command Maximize aborted. Window does not exist."
+        Dim success = "Windows maximized."
+        Dim action = SC_MAXIMIZE
+
         'Go-based Sniper
         Try
             If p Is Nothing Then
-                Status.Text = "Command Maximize aborted. Window does not exist."
+                Status.Text = abort
             Else
                 StatusBar.Value = 50
-                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+                SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, action, 0)
                 StatusBar.Value = 100
-                Status.Text = "Windows Maximized."
+                Status.Text = success
             End If
 
         Catch ex As Exception
-            Status.Text = "Command Maximize aborted. Window does not exist."
+            Status.Text = abort
         End Try
 
         'Rust based Sniper
         Try
             If p2 Is Nothing Then
-                Status.Text = "Command Maximize aborted. Window does not exist."
+                Status.Text = abort
             Else
                 StatusBar.Value = 50
-                SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+                SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, action, 0)
                 StatusBar.Value = 100
-                Status.Text = "Windows Maximized."
+                Status.Text = success
             End If
         Catch ex As Exception
-            Status.Text = "Command Maximize aborted. Window does not exist."
+            Status.Text = abort
+        End Try
+
+        'Python based Sniper
+        Try
+            If p3 Is Nothing Then
+                Status.Text = abort
+            Else
+                StatusBar.Value = 50
+                SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 100
+                Status.Text = success
+            End If
+        Catch ex As Exception
+            Status.Text = abort
+        End Try
+
+        'Go-based Sniper Config
+        Try
+            If c1 Is Nothing Then
+                Status.Text = config
+            Else
+                StatusBar.Value = 50
+                SendMessage(c1.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 0
+                Status.Text = success
+            End If
+
+        Catch ex As Exception
+            Status.Text = config
+        End Try
+
+        'Rust based Sniper Config
+        Try
+            If c2 Is Nothing Then
+                Status.Text = config
+            Else
+                StatusBar.Value = 50
+                SendMessage(c2.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 0
+                Status.Text = success
+            End If
+        Catch ex As Exception
+            Status.Text = config
+        End Try
+
+        'Python based Sniper Config
+        Try
+            If c3 Is Nothing Then
+                Status.Text = config
+            Else
+                StatusBar.Value = 50
+                SendMessage(c3.MainWindowHandle, WM_SYSCOMMAND, action, 0)
+                StatusBar.Value = 0
+                Status.Text = success
+            End If
+        Catch ex As Exception
+            Status.Text = config
         End Try
     End Sub
     Private Sub DefaultProgramSettingsToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DefaultProgramSettingsToolStripMenuItem.Click
@@ -580,8 +682,165 @@ Public Class MainMdiContainerForm
         StatusBar.Style = ProgressBarStyle.Continuous
         Status.Text = "Done"
     End Sub
-
     Private Sub LicenseToolStripDropDownButton_Click(sender As Object, e As EventArgs) Handles LicenseToolStripDropDownButton.Click
         LicenseForm.ShowDialog()
+    End Sub
+    Private Async Sub StartPythonBasedNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartPythonBasedNitroSniperToolStripMenuItem.Click
+        'Kill sniper first
+        Try
+            If p3 Is Nothing Then
+            Else
+                p3.Kill()
+                KillChildrenProcessesOf(CUInt(p3.Id))
+            End If
+        Catch ex As Exception
+        End Try
+
+        'Set ProcessStartInfo
+        Dim p3info As New ProcessStartInfo() With {
+                .FileName = Application.StartupPath + "\dist\sniper\sniper.exe",
+                .WorkingDirectory = Application.StartupPath + "\dist\sniper\", 'Working Dir Important since the App will crash without.
+               .WindowStyle = ProcessWindowStyle.Normal
+            }
+        p3 = Process.Start(p3info)
+        Threading.Thread.Sleep(2000)
+        StatusBar.Value = 55
+        Status.Text = "Setting location and position..."
+
+        Try
+            'Set Application inside Form1's Window (Stage 1, Window outside application)
+            SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+            GetWindowRect(New HandleRef(p3, p3.MainWindowHandle), rct)
+            StatusBar.Value = 60
+
+            'Set Application inside Form1's Window (Stage 2, Window inside application)
+            SetParent(p3.MainWindowHandle, Panel1.Handle)
+            SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
+            Panel1.Visible = True
+            Panel1.Focus()
+            StatusBar.Value = 70
+
+            'Wait half a second
+            'Threading.Thread.Sleep(500)
+            Await Task.Delay(500)
+            StatusBar.Value = 0
+            Status.Text = "Loaded. To use additional Tools, open the Tools menu."
+
+            Refresh()
+        Catch ex As Exception
+            MsgBox("The application quit unexpectedly. Maybe you forgot to change the config files?" + Environment.NewLine + Environment.NewLine + ex.Message)
+            Status.Text = ex.Message
+            StatusBar.Value = 0
+        End Try
+    End Sub
+    Private Async Sub PythonNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PythonNitroSniperConfigToolStripMenuItem.Click
+        If My.Settings.OpenOutside = True Then
+            Try
+                If My.Settings.UseSystem = True Then
+                    Process.Start(Application.StartupPath + "\dist\sniper\token.json")
+                ElseIf My.Settings.NotepadSystem32 = True Then
+                    Process.Start("C:\Windows\System32\notepad.exe", Application.StartupPath + "\dist\sniper\token.json")
+                ElseIf My.Settings.NotepadWin = True Then
+                    Process.Start("C:\Windows\notepad.exe", Application.StartupPath + "\dist\sniper\token.json")
+                ElseIf My.Settings.WriteWin = True Then
+                    Process.Start("C:\Windows\write.exe", Application.StartupPath + "\dist\sniper\token.json")
+                End If
+            Catch ex As Exception
+                'MsgBox("Did you forgot to download the config files?" + Environment.NewLine + Environment.NewLine + ex.Message, vbExclamation, "Config Files Missing")
+                Dim response As MsgBoxResult = MsgBox("Did you forget to download the config files?" + Environment.NewLine + Environment.NewLine + "Press Yes to create them now, Press No to close this message." + Environment.NewLine + Environment.NewLine + ex.Message, CType(vbYesNo + vbExclamation, MsgBoxStyle), "Config Files Missing")
+                If response = Global.Microsoft.VisualBasic.MsgBoxResult.Yes Then
+
+                    ' Create or overwrite the file.
+                    IO.File.Create(Application.StartupPath + "\dist\sniper\token.json").Dispose()
+
+                    ' Add text to the file.
+                    Dim objWriter As New IO.StreamWriter(Application.StartupPath + "\dist\sniper\token.json", True)
+                    objWriter.WriteLine("{ ""token"": ""token here"" }")
+                    objWriter.Close()
+                    MsgBox("Config File created. Try to open the config again.", CType(vbInformation + vbOKOnly, MsgBoxStyle), "Config File")
+
+                End If
+
+                If response = MsgBoxResult.No Then
+                End If
+            End Try
+        ElseIf My.Settings.OpenInsde = True Then
+            'Kill Notepad First
+            Try
+                If c3 Is Nothing Then
+                Else
+                    c3.Kill()
+                    KillChildrenProcessesOf(CUInt(c3.Id))
+                End If
+            Catch ex As NullReferenceException
+            End Try
+
+            Dim Filename As String = ""
+            Dim Arguments As String = ""
+
+            If My.Settings.UseSystem = True Then
+                Filename = Application.StartupPath + "\dist\sniper\token.json"
+                Arguments = ""
+            ElseIf My.Settings.NotepadSystem32 = True Then
+                Filename = "C:\Windows\System32\notepad.exe"
+                Arguments = Application.StartupPath + "\dist\sniper\token.json"
+            ElseIf My.Settings.NotepadWin = True Then
+                Filename = "C:\Windows\notepad.exe"
+                Arguments = Application.StartupPath + "\dist\sniper\token.json"
+            ElseIf My.Settings.WriteWin = True Then
+                Filename = "C:\Windows\write.exe"
+                Arguments = Application.StartupPath + "\dist\sniper\token.json"
+            End If
+
+            'Set ProcessStartInfo
+            Dim c3info As New ProcessStartInfo() With {
+                    .FileName = Filename,
+                    .Arguments = Arguments,
+                   .WindowStyle = ProcessWindowStyle.Normal
+                }
+            c3 = Process.Start(c3info)
+
+            Threading.Thread.Sleep(2000)
+            StatusBar.Value = 55
+            Status.Text = "Setting location and position..."
+
+            Try
+                'Set Application inside Form1's Window (Stage 1, Window outside application)
+                SendMessage(c3.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
+                GetWindowRect(New HandleRef(c3, c3.MainWindowHandle), rct)
+                StatusBar.Value = 60
+
+                'Set Application inside Form1's Window (Stage 2, Window inside application)
+                SetParent(c3.MainWindowHandle, Panel1.Handle)
+                SendMessage(c3.MainWindowHandle, WM_SYSCOMMAND, 0, 0)
+                Panel1.Visible = True
+                Panel1.Focus()
+                StatusBar.Value = 70
+
+                'Wait half a second
+                Await Task.Delay(500)
+                StatusBar.Value = 0
+                Status.Text = "Loaded. To use additional Tools, open the Tools menu."
+
+                Refresh()
+            Catch ex As Exception
+                Dim response As MsgBoxResult = MsgBox("Did you forget to download the config files?" + Environment.NewLine + Environment.NewLine + "Press Yes to create them now, Press No to close this message." + Environment.NewLine + Environment.NewLine + ex.Message, CType(vbYesNo + vbExclamation, MsgBoxStyle), "Config Files Missing")
+                If response = Global.Microsoft.VisualBasic.MsgBoxResult.Yes Then
+
+                    ' Create or overwrite the file.
+                    IO.File.Create(Application.StartupPath + "\dist\sniper\token.json").Dispose()
+
+                    ' Add text to the file.
+                    Dim objWriter As New IO.StreamWriter(Application.StartupPath + "\dist\sniper\token.json", True)
+                    objWriter.WriteLine("{ ""token"": ""token here"" }")
+                    objWriter.Close()
+                    MsgBox("Config File created. Try to open the config again.")
+
+                End If
+
+                If response = MsgBoxResult.No Then
+                End If
+            End Try
+        End If
     End Sub
 End Class

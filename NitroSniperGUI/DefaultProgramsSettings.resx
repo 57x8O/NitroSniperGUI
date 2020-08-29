@@ -117,8 +117,11 @@
   <resheader name="writer">
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
+  <metadata name="SettingsTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
+    <value>17, 17</value>
+  </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="PictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAINJREFUOE+tkQEOgCAMA3k6T+NnuoLTMgpq9JIlxLTn0BTJOW+zOSIaD62wmE+P
@@ -129,20 +132,12 @@
   <metadata name="SettingsTip.TrayLocation" type="System.Drawing.Point, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a">
     <value>17, 17</value>
   </metadata>
-  <data name="PictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAINJREFUOE+tkQEOgCAMA3k6T+NnuoLTMgpq9JIlxLTn0BTJOW+zOSIaD62wmE+P
         KlruHKaUMkqUoK08CoBVrivdra3otrh7u9oAQFBzsw1YovhXgDtFVgL/Bi1j4MB4kccZyoTchOGyEoAa
         iCIvYlZlphPh/LQY6QTt0Xs+C+pf0oKUdm2zGtJuPju7AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAACDSURBVDhPrZEBDoAgDAN5Ok/jZ7qC0zIKavSSJcS059AU
-        yTlvszkiGg+tsJhPjypa7hymlDJKlKCtPAqAVa4r3a2t6La4e7vaAEBQc7MNWKL4V4A7RVYC/wYtY+DA
-        eJHHGcqE3IThshKAGogiL2JWZaYT4fy0GOkE7dF7PgvqX9KClHZtsxrSbj47uwAAAABJRU5ErkJggg==
 </value>
   </data>
   <data name="PictureBox2.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -153,7 +148,7 @@
         iCIvYlZlphPh/LQY6QTt0Xs+C+pf0oKUdm2zGtJuPju7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox3.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PictureBox1.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAINJREFUOE+tkQEOgCAMA3k6T+NnuoLTMgpq9JIlxLTn0BTJOW+zOSIaD62wmE+P
@@ -161,7 +156,15 @@
         iCIvYlZlphPh/LQY6QTt0Xs+C+pf0oKUdm2zGtJuPju7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="PictureBox4.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="PictureBox5.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAINJREFUOE+tkQEOgCAMA3k6T+NnuoLTMgpq9JIlxLTn0BTJOW+zOSIaD62wmE+P
+        KlruHKaUMkqUoK08CoBVrivdra3otrh7u9oAQFBzsw1YovhXgDtFVgL/Bi1j4MB4kccZyoTchOGyEoAa
+        iCIvYlZlphPh/LQY6QTt0Xs+C+pf0oKUdm2zGtJuPju7AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="PictureBox6.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAINJREFUOE+tkQEOgCAMA3k6T+NnuoLTMgpq9JIlxLTn0BTJOW+zOSIaD62wmE+P

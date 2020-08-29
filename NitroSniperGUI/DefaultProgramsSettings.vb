@@ -5,12 +5,15 @@
         Application.VisualStyleState = VisualStyles.VisualStyleState.ClientAreaEnabled
 
         If IO.File.Exists("C:\Windows\notepad.exe") Then
+            NF2.Visible = False
             NotepadWinBtn.Enabled = True
             PictureBox3.Visible = True
         ElseIf IO.File.Exists("C:\Windows\System32\notepad.exe") Then
+            NF1.Visible = False
             NotepadSystem32Btn.Enabled = True
             PictureBox2.Visible = True
         ElseIf IO.File.Exists("C:\Windows\write.exe") Then
+            NF3.Visible = False
             Writebtn.Enabled = True
             PictureBox4.Visible = True
         End If
@@ -68,4 +71,5 @@
         My.Settings.OpenOutside = True
         My.Settings.Save()
     End Sub
+
 End Class

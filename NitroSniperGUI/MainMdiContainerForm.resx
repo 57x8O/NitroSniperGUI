@@ -129,40 +129,26 @@
         iCIvYlZlphPh/LQY6QTt0Xs+C+pf0oKUdm2zGtJuPju7AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="ToolToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADoSURBVDhPtVNLCsIwEO1S3blypyfyCrpTRBDbWehOVNCt
-        h6geSw8gIm76ScnEmZhSW7Efiw8eDJn33iRtYn0D2tiUEB6YaqVaZrkcyNCQTrj2wb8zKWTDa6adD20m
-        QwDBFR0xYXJNgdvCkJTZFmO1VG0m14UhWTPOsCMdcZQgTlwrEKPcEISgT+e90Zan2kxGDx7IjEO4pzWk
-        NbYECOEwAnFRC69LU3Y0Ub2TdrfnHmtYa2wJ0A4H0VycEbweTXQ/A4TLvZfmLwG1j1D3I9b+jYxsSKWL
-        FCMVUvUqx9Ahvz6mGOWes2U9AfS6vlSfEJUFAAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="HelpToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADNSURBVDhPlZHLDYMwEES3J3pyHZx8jpTTlpBDeqAAn2mB
-        MhaPyTiLMQhGGlmYfc985CqjjJYX9HkAm5olSRYkPBN5mFXRe6IW1jCUAsY99FTUwmZSm3QvyeN7SQv7
-        WhqKhII8znXLGVyfIAvwGoRDqKI+7CF8PMxgJay67eG6CFgKMIz6aw/HGPcCbE7TdBD14O/n9YcRCpZl
-        LhIOlP0fjBP9IRVGsDHL21JIRUIRh3lqF2bwe9BW1Mry6BH26Yluwz5e9Bj2gSQvF7DICtsbgVAdQRVN
-        AAAAAElFTkSuQmCC
-</value>
-  </data>
-  <data name="LicenseToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABvSURBVDhPvY5RDsAgCEM5ujebN3NU7YaLW+rHfAlpoEBq
-        D4qoUwpIKX0q9tp6IJqqet3wgULO+ecH3l4Ve7I3QSyylADLx2FViZyAxz6pihmQE/DY7aqt35kAuDUc
-        g6UHM14fwFDLT8YHHRpKdcxOehgpRLngF+gAAAAASUVORK5CYII=
-</value>
-  </data>
-  <data name="ConfigFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="ExitToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
-        wwAADsMBx2+oZAAAAFpJREFUOE/tj0EOwCAIBHk6T+NndknAqkWJ3kw6ycTD4oo0wsxlJmI3RodEJBRx
-        Pc2e8bVWxHmJDs5YlLxkBQrGzjZA3Lm9gXP8BecvuKJAg0yMfi8bbZhpED0gvT9foB3J6AAAAABJRU5E
-        rkJggg==
+        wwAADsMBx2+oZAAAAJpJREFUOE+tksENgzAUQ/8AUDEiJ07MwamjVepIgRccCfJpCgRLEZHtZy6xxzRY
+        0y/nu5xOlhOZOr2sVRijNWGyNqjgRvDI6NCFURTDGHysC297uRHueGR00o8U+8J2pJQJX1Uo/oeTCHLg
+        NJyUj1yCUdVADvPd3osjR7CAI28/gvGrWMqEx4Hqh1T3lBEGBYqynMjU2cP3ZTYDxdyzocDSgPsAAAAA
+        SUVORK5CYII=
+</value>
+  </data>
+  <data name="PythonNitroSniperConfigToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAYVJREFUOE99kr9LQlEcxf2jhLYaQmpxcQhcg4bWQHDRoam/QCJxEATBSfBN4tDg
+        0CQ0RJMEL6HlQT/AoUFOfr7vfm++kA4c7o93z/me+323NJvNtMv5fF7gYrGILO0DIj6uViut12ttNhtj
+        mqZxzncfg+wXGCyXyyhm3e12lWWZXtKV7TmYsx+kOTwmCabTqWq1mpk4hvdPqlwnOmwOdXx1a2uMgjxP
+        0O/3NRqNVK1W1el0gjQHYpIgrlzeGAsGvV5PrVZL5XLZRq6zD5ZkKz65aNs6miRJonq9rkajIeb04m9s
+        r47YDZSeSR9jmQHxB4OBiYGL3WBX3L4bS9+v0vOp0ZoI3z+/ooGLOcx+AYjTpvR4JD0cqPAO/DAJqGzr
+        t66UneckNpWDOBr4O3ADeoCB4R8x5tYDEvCreCSwABdvGwb8YcW/MJlMLAHVuQbEhNGwW537U3kLEwMS
+        0ERG/yOeyppKZQyIDunJrgEJYFhGuFlMEoBpOJKDg2G6F57MU4XtgFLpB2A/yWDppw3cAAAAAElFTkSu
+        QmCC
 </value>
   </data>
   <data name="GoNitroSniperConfigToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
@@ -181,12 +167,84 @@
         Gkp1zE56GClEueAX6AAAAABJRU5ErkJggg==
 </value>
   </data>
+  <data name="ConfigFilesToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAFpJREFUOE/tj0EOwCAIBHk6T+NndknAqkWJ3kw6ycTD4oo0wsxlJmI3RodEJBRx
+        Pc2e8bVWxHmJDs5YlLxkBQrGzjZA3Lm9gXP8BecvuKJAg0yMfi8bbZhpED0gvT9foB3J6AAAAABJRU5E
+        rkJggg==
+</value>
+  </data>
+  <data name="StartPythonBasedNitroSniperToolStripMenuItem.ToolTipText" xml:space="preserve">
+    <value>A pre-compiled Nitro Sniper that is based on Python. (Most Advanced Nitro Sniper)
+
+Features:
+Shows you the Nitro Code, from who it came from and from what Server and Discord Channel.
+Automatically redeems Nitro Codes.
+Detects fake codes.
+Joins Giveaways and alerts you if you won.
+</value>
+  </data>
+  <data name="MaximizeAllWindowsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAADpJREFUOE9jGASg4vp/ijBWQTy4Yc9rFJqhtbPn/7Nnz8jCIL0YBvz69YtoPGrA
+        8DKAEgzNEAMGGBgA8PWJn4RzpQAAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="MinimizeAllWindowsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAQxJREFUOE9jWLp06X9CmAEfACnAB4g2oGD5v/8NG/79z1yEwCAAM6CsrOw/OkYx
+        YM3Ze/+PPvn+//CD///XX/z3f/dNsDDxLvAqjPkf0Zjzv2vN0v8bz9/+f/jed7A4NheANcIAzADDoNj/
+        ltEJ/yPKS/8XT+z+37JoJlicaBfgAkQZQAhDlWIHIAX4ANEGnO8L/H+swvP/6mtX/x949Ov/yQe/wOIw
+        A5ADESUwYQbcylT/v6rS+H/f5sz/+w4f+9/TfwssTrQLrj6Y8L99W+z/6mVR/9fsb/6/fvNusDg2F4A1
+        wgDMgP1X6/737Ez5X7449P+sban/X79fDBYn2gW4AFEGEMJQpbQADAwAMbnfezytt/YAAAAASUVORK5C
+        YII=
+</value>
+  </data>
+  <data name="WindowControlsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
+        wwAADsMBx2+oZAAAAGFJREFUOE9joBxUXP9PEsYA2BQh4YY9r1FoqC4EaO3s+f/s2TOiMEgtVBsCoBvw
+        69cvnJgoA5CdTxQm1QCMMEE3AJ2PD4O9RMgAbGEBw9QzAB2TZAA6GCYGkIKh2sgFDAwAMQZmg2ikETIA
+        AAAASUVORK5CYII=
+</value>
+  </data>
   <data name="DefaultProgramSettingsToolStripMenuItem.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAO
         wwAADsMBx2+oZAAAAIdJREFUOE/FjgEOwCAIA306T/NnbhWqTJ3TZclICCL0aPgsRCS1aaPnwHKMMaUU
         LnUJcif2kFGaXAG7YQCFVMDYAaq7WvoOQLveNpYUUq9yjjf0FwcUUoRoRVMH+OSwuZQT4qkDvawV+xSh
         kTM5HwK8GJWA3BuA8yUHs9oB3mQBWPBjN3+PEA7plsEnVGWo7AAAAABJRU5ErkJggg==
+</value>
+  </data>
+  <data name="ToolToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADnSURBVDhPtVOxDoIwEGVUNyc3/SJ/QTeNMTHCDboZNdHV
+        j0A/S3eNYQNa0qt3FYJgBJH4kpdceu+9a6G1PgFtbCoQB6Ze6Va8/B3I0FCOWAcQeEwK2fBa3C6GMZMh
+        hPCGjpwwuabAbWlIxmzLsV7qNpPr0pC8GWfYUY48KpAnrjXIUWEIQtin895py1NjJqMHV2QmIdwzGtLG
+        thQIYhiBvOiF36UpO5qoX0m723OPNayNbSnQFoNoLs8Ifo8muu8B0uXeU/OXgNpHqPsRa/9GRj6k0kVK
+        kAmpepUTmJBfH1OC756zZT0Agt6+HENBtucAAAAASUVORK5CYII=
+</value>
+  </data>
+  <data name="HelpToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAADNSURBVDhPlZHLDYMwEES3J3pyHZx8jpTTlpBDeqAAn2mB
+        MhaPyTiLMQhGGlmYfc985CqjjJYX9HkAm5olSRYkPBN5mFXRe6IW1jCUAsY99FTUwmZSm3QvyeN7SQv7
+        WhqKhII8znXLGVyfIAvwGoRDqKI+7CF8PMxgJay67eG6CFgKMIz6aw/HGPcCbE7TdBD14O/n9YcRCpZl
+        LhIOlP0fjBP9IRVGsDHL21JIRUIRh3lqF2bwe9BW1Mry6BH26Yluwz5e9Bj2gSQvF7DICtsbgVAdQRVN
+        AAAAAElFTkSuQmCC
+</value>
+  </data>
+  <data name="LicenseToolStripDropDownButton.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+    <value>
+        iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
+        YQUAAAAJcEhZcwAADsMAAA7DAcdvqGQAAABvSURBVDhPvY5RDsAgCEM5ujebN3NU7YaLW+rHfAlpoEBq
+        D4qoUwpIKX0q9tp6IJqqet3wgULO+ecH3l4Ve7I3QSyylADLx2FViZyAxz6pihmQE/DY7aqt35kAuDUc
+        g6UHM14fwFDLT8YHHRpKdcxOehgpRLngF+gAAAAASUVORK5CYII=
 </value>
   </data>
   <data name="$this.Icon" type="System.Drawing.Icon, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
