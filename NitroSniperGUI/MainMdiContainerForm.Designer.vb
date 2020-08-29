@@ -24,9 +24,8 @@ Partial Class MainMdiContainerForm
     Private Sub InitializeComponent()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMdiContainerForm))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
-        Me.StatusBar = New System.Windows.Forms.ToolStripProgressBar()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.Status = New System.Windows.Forms.ToolStripStatusLabel()
+        Me.StatusBar = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ConfigFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -45,6 +44,8 @@ Partial Class MainMdiContainerForm
         Me.DefaultProgramSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LicenseToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.CheckForUpdatesBtn = New System.Windows.Forms.ToolStripDropDownButton()
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -52,7 +53,7 @@ Partial Class MainMdiContainerForm
         '
         Me.StatusStrip1.AllowMerge = False
         Me.StatusStrip1.Dock = System.Windows.Forms.DockStyle.Top
-        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolToolStripDropDownButton, Me.HelpToolStripDropDownButton, Me.LicenseToolStripDropDownButton})
+        Me.StatusStrip1.Items.AddRange(New System.Windows.Forms.ToolStripItem() {Me.Status, Me.StatusBar, Me.ToolToolStripDropDownButton, Me.HelpToolStripDropDownButton, Me.LicenseToolStripDropDownButton, Me.CheckForUpdatesBtn})
         Me.StatusStrip1.Location = New System.Drawing.Point(0, 0)
         Me.StatusStrip1.Name = "StatusStrip1"
         Me.StatusStrip1.RenderMode = System.Windows.Forms.ToolStripRenderMode.ManagerRenderMode
@@ -61,27 +62,6 @@ Partial Class MainMdiContainerForm
         Me.StatusStrip1.TabIndex = 0
         Me.StatusStrip1.Text = "StatusStrip1"
         '
-        'StatusBar
-        '
-        Me.StatusBar.BackColor = System.Drawing.SystemColors.Control
-        Me.StatusBar.Name = "StatusBar"
-        Me.StatusBar.Size = New System.Drawing.Size(152, 16)
-        Me.StatusBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
-        '
-        'Panel1
-        '
-        Me.Panel1.AllowDrop = True
-        Me.Panel1.AutoScroll = True
-        Me.Panel1.AutoSize = True
-        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
-        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.Panel1.Location = New System.Drawing.Point(0, 22)
-        Me.Panel1.Name = "Panel1"
-        Me.Panel1.Size = New System.Drawing.Size(1008, 707)
-        Me.Panel1.TabIndex = 1
-        Me.Panel1.TabStop = True
-        '
         'Status
         '
         Me.Status.BackColor = System.Drawing.SystemColors.Control
@@ -89,6 +69,13 @@ Partial Class MainMdiContainerForm
         Me.Status.Name = "Status"
         Me.Status.Size = New System.Drawing.Size(51, 17)
         Me.Status.Text = "Done"
+        '
+        'StatusBar
+        '
+        Me.StatusBar.BackColor = System.Drawing.SystemColors.Control
+        Me.StatusBar.Name = "StatusBar"
+        Me.StatusBar.Size = New System.Drawing.Size(152, 16)
+        Me.StatusBar.Style = System.Windows.Forms.ProgressBarStyle.Continuous
         '
         'ToolToolStripDropDownButton
         '
@@ -227,6 +214,29 @@ Partial Class MainMdiContainerForm
         Me.LicenseToolStripDropDownButton.Size = New System.Drawing.Size(66, 20)
         Me.LicenseToolStripDropDownButton.Text = "License"
         '
+        'Panel1
+        '
+        Me.Panel1.AllowDrop = True
+        Me.Panel1.AutoScroll = True
+        Me.Panel1.AutoSize = True
+        Me.Panel1.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
+        Me.Panel1.BackColor = System.Drawing.SystemColors.ControlDark
+        Me.Panel1.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.Panel1.Location = New System.Drawing.Point(0, 22)
+        Me.Panel1.Name = "Panel1"
+        Me.Panel1.Size = New System.Drawing.Size(1008, 707)
+        Me.Panel1.TabIndex = 1
+        Me.Panel1.TabStop = True
+        '
+        'CheckForUpdatesBtn
+        '
+        Me.CheckForUpdatesBtn.Image = CType(resources.GetObject("CheckForUpdatesBtn.Image"), System.Drawing.Image)
+        Me.CheckForUpdatesBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.CheckForUpdatesBtn.Name = "CheckForUpdatesBtn"
+        Me.CheckForUpdatesBtn.ShowDropDownArrow = False
+        Me.CheckForUpdatesBtn.Size = New System.Drawing.Size(124, 20)
+        Me.CheckForUpdatesBtn.Text = "Check for Updates"
+        '
         'MainMdiContainerForm
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
@@ -267,4 +277,5 @@ Partial Class MainMdiContainerForm
     Friend WithEvents LicenseToolStripDropDownButton As ToolStripDropDownButton
     Friend WithEvents StartPythonBasedNitroSniperToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents PythonNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents CheckForUpdatesBtn As ToolStripDropDownButton
 End Class

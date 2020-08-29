@@ -46,6 +46,7 @@ Public Class MainMdiContainerForm
         End If
         AutoUpdater.LetUserSelectRemindLater = True
         AutoUpdater.DownloadPath = Environment.CurrentDirectory
+
         AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
 
         Await Task.Delay(1000)
@@ -601,6 +602,8 @@ Public Class MainMdiContainerForm
         ControlBox = False
         StatusStrip1.Visible = False
         FormBorderStyle = FormBorderStyle.None
+        CheckForUpdatesBtn.Visible = False
+        LicenseToolStripDropDownButton.Visible = False
 
         'Welcome Message
         MsgBox("Welcome to the Nitro Sniper GUI Help! Im here to introduce you to the features and functions, that you can use.", vbInformation, "Help")
@@ -621,6 +624,10 @@ Public Class MainMdiContainerForm
         Status.Text = "Currently showing Help."
         MsgBox("You can get a Status of the current operation to know what´s happening. Error Messages will also be shown on the Status.", vbInformation, "Status Text/Bar Help")
         StatusBar.Value = 20
+
+        'Check for updates manually
+        CheckForUpdatesBtn.Visible = True
+        MsgBox("If you want to check for updates manuually, press the 'Check for Updates' button.", vbInformation, "Manual Update Help")
         ToolToolStripDropDownButton.Visible = True
         ToolToolStripDropDownButton.ShowDropDown()
 
@@ -634,9 +641,11 @@ Public Class MainMdiContainerForm
         'Sniper Help
         StartGoBasedNitroSniperToolStripMenuItem.BackColor = Color.Yellow
         StartRustBasedNitroSniperToolStripMenuItem.BackColor = Color.Yellow
+        StartPythonBasedNitroSniperToolStripMenuItem.BackColor = Color.Yellow
         MsgBox("The main feature is to start Nitro Snipers and have them inside the Nitro Sniper GUI.", vbInformation, "Nitro Sniper Help")
         StartGoBasedNitroSniperToolStripMenuItem.BackColor = Color.White
         StartRustBasedNitroSniperToolStripMenuItem.BackColor = Color.White
+        StartPythonBasedNitroSniperToolStripMenuItem.BackColor = Color.White
         StatusBar.Value = 55
 
         'Config Help
@@ -645,10 +654,12 @@ Public Class MainMdiContainerForm
         GoNitroSniperConfigToolStripMenuItem.BackColor = Color.Yellow
         RustNitroSniperConfigToolStripMenuItem.BackColor = Color.Yellow
         ConfigFilesToolStripMenuItem.BackColor = Color.Yellow
+        PythonNitroSniperConfigToolStripMenuItem.BackColor = Color.Yellow
         MsgBox("You can also change the config files, to add sub-tokens or change settings.", vbInformation, "Config Help")
         GoNitroSniperConfigToolStripMenuItem.BackColor = Color.White
         RustNitroSniperConfigToolStripMenuItem.BackColor = Color.White
         ConfigFilesToolStripMenuItem.BackColor = Color.White
+        PythonNitroSniperConfigToolStripMenuItem.BackColor = Color.White
         StatusBar.Value = 75
 
         'Window control help
@@ -671,10 +682,18 @@ Public Class MainMdiContainerForm
         MsgBox("To change settings like if the config should be inside or outside the GUI, and what Config Editor to use, press on 'GUI Settings'", vbInformation, "Settings Help")
         DefaultProgramSettingsToolStripMenuItem.BackColor = Color.White
 
-        'Help Done Msg
+        'License Help
         ToolToolStripDropDownButton.HideDropDown()
+        LicenseToolStripDropDownButton.Visible = True
+        LicenseToolStripDropDownButton.BackColor = Color.Yellow
+        MsgBox("Also NitroSniperGUI is licnese under the GNU GPL 3.0 License, so feel free to read it.", vbInformation, "Legal Stuff")
+        LicenseToolStripDropDownButton.BackColor = Color.White
+
+        'Help Done Msg
         HelpToolStripDropDownButton.Visible = True
+        HelpToolStripDropDownButton.BackColor = Color.Yellow
         MsgBox("You can always go back and press on Help if you need it in the future again!" + Environment.NewLine + Environment.NewLine + "                                                                                           -Help", vbInformation, "Help")
+        HelpToolStripDropDownButton.BackColor = Color.Cyan
 
         'Change to default
         Panel1.Visible = True
@@ -842,5 +861,20 @@ Public Class MainMdiContainerForm
                 End If
             End Try
         End If
+    End Sub
+
+    Private Async Sub CheckForUpdatesBtn_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesBtn.Click
+        'Initialize manual Updater
+        Dim currentDirectory As New IO.DirectoryInfo(Environment.CurrentDirectory)
+        If currentDirectory.Parent Is Nothing Then
+            AutoUpdater.InstallationPath = currentDirectory.Parent.FullName
+        End If
+        AutoUpdater.LetUserSelectRemindLater = True
+        AutoUpdater.DownloadPath = Environment.CurrentDirectory
+
+        AutoUpdater.ReportErrors = True  'Show message if already up-to-date and show error messages
+        AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
+
+        Await Task.Delay(1000)
     End Sub
 End Class
