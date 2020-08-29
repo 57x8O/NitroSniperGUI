@@ -23,11 +23,12 @@ Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without t
 
 4. Once opened, go to Tools and start your Nitro Sniper.
 
+## How to build it myself?
+Go to the [Wiki](https://github.com/PeterStrick/NitroSniperGUI/wiki) to find how to build NitroSniperGUI and it´s Nitro Snipers manually.
 
-
-### Disclaimer
+## Disclaimer
 This can get your account banned if you run multiple instance at the same time and/or claim too much Nitros in a too short amount of time. Use it at your own risk.
 I am not responsible in any damages or bans that may occur when using this application. Use it at your own risk.
 
-### Info
+## Info
 Some Antivirus Products like AVG and Avast flag NitroSniperGUI.exe and rust-nitro-sniper.exe as IDP.Generic, duo to it having no signature.
