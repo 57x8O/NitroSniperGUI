@@ -6,7 +6,7 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | [Vedzea´s Nitro Sniper Go - Coded in Go](https://github.com/Vedzaa/NitroSniperGo#nitrosnipergo)  | [ee92ebc](https://github.com/Vedzaa/NitroSniperGo/commit/ee92ebc8456512b74293a80b02250afdc2f62f67)
 | [Vedzea´s Nitro Sniper - Coded in Python](https://github.com/Vedzaa/NitroSniper)                 | [bf3acbb](https://github.com/Vedzaa/NitroSniper/commit/bf3acbb0a5ce456b57b8bc5877c06a6dbd153806)
 | [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | 2.6.3
-| Nitro Sniper GUI                                                                                 | [![GitHub release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
+| Nitro Sniper GUI                                                                                 | [![Please reload your browser to see this image because your Internet might not be the best.](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 
 
 
