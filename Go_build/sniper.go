@@ -4,9 +4,6 @@ import (
 	"encoding/json"
 	"flag"
 	"fmt"
-	"github.com/bwmarrin/discordgo"
-	"github.com/fatih/color"
-	"github.com/valyala/fasthttp"
 	"io/ioutil"
 	"os"
 	"os/exec"
@@ -16,6 +13,10 @@ import (
 	"strings"
 	"syscall"
 	"time"
+
+	"github.com/bwmarrin/discordgo"
+	"github.com/fatih/color"
+	"github.com/valyala/fasthttp"
 )
 
 var (
@@ -180,7 +181,7 @@ func messageCreate(s *discordgo.Session, m *discordgo.MessageCreate) {
 		_, _ = magenta.Println(" [" + guild.Name + " > " + channel.Name + "]")
 		checkCode(bodyString)
 
-	} else if strings.Contains(strings.ToLower(m.Content), "**giveaway**") || (strings.Contains(strings.ToLower(m.Content), "react with") && strings.Contains(strings.ToLower(m.Content), "giveaway")) {
+	} else if strings.Contains(strings.ToLower(m.Content), "**giveaway**") || (strings.Contains(strings.ToLower(m.Content), "react with") && strings.Contains(strings.ToLower(m.Content), "giveaway") && strings.Contains(strings.ToLower(m.Content), "nitro")) {
 		time.Sleep(time.Minute)
 		guild, err := s.State.Guild(m.GuildID)
 		if err != nil || guild == nil {
