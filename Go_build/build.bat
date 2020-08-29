@@ -1,0 +1,1 @@
+go build -o go-nitro-sniper.exe

@@ -1,0 +1,1 @@
+pyinstaller sniper.py --win-no-prefer-redirects -i exe.ico
