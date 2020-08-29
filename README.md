@@ -10,7 +10,7 @@ NitroSniperGUI is a more friendly user interface for multiple Nitro Sniper Appli
 Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without token or config files.
 
 ## How to use it?
-1. When you download the release to any location that you wish, create download the following files from [here](https://github.com/PeterStrick/NitroSniperGUI/tree/master/configfiles) to the location that you chose.
+1. When you download the release to any location that you wish, create/download the following files from [here](https://github.com/PeterStrick/NitroSniperGUI/tree/master/configfiles) to the location that you chose.
 
 2. After you copied the config files, open both config files and change the Token/MainToken variables to your Discord Token. You can find out how to get your Discord Token [here](https://github.com/Tyrrrz/DiscordChatExporter/wiki/Obtaining-Token-and-Channel-IDs#how-to-get-a-user-token)
 
