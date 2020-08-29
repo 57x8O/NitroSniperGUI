@@ -23,6 +23,11 @@ Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without t
 
 4. Once opened, go to Tools and start your Nitro Sniper.
 
+## Did I get confirmation/permission to include the Nitro Snipers in my project?
+Yes, indeed I did. See here:
+[Rust Nitro Sniper](https://github.com/Melonai/rust-nitro-sniper/issues/11) | [Go/Python Nitro Sniper](https://github.com/Vedzaa/NitroSniper/issues/17)
+
+
 ## How to build it myself?
 Go to the [Wiki](https://github.com/PeterStrick/NitroSniperGUI/wiki) to find how to build NitroSniperGUI and it´s Nitro Snipers manually.
 
