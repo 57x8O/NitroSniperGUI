@@ -5,6 +5,8 @@ A more friendly User Interface for the following Nitro Snipers, that let´s ypu 
 
 [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)
 
+[Vedzea´s Nitro Sniper - Coded in Python](https://github.com/Vedzaa/NitroSniper)
+
 ## What is Nitro Sniper GUI?
 NitroSniperGUI is a more friendly user interface for multiple Nitro Sniper Applications for Windows. 
 Currently Nitro Sniper GUI includes the Rst and Go based Nitro Snipers without token or config files.
@@ -28,4 +30,4 @@ This can get your account banned if you run multiple instance at the same time a
 I am not responsible in any damages or bans that may occur when using this application. Use it at your own risk.
 
 ### Info
-Some Antivirus Products like AVG and Avast flag NitroSniperGUI.exe as IDP.Generic, duo to it having no signature.
+Some Antivirus Products like AVG and Avast flag NitroSniperGUI.exe and rust-nitro-sniper.exe as IDP.Generic, duo to it having no signature.
