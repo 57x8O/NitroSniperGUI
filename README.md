@@ -8,6 +8,10 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | [2.6.3](https://github.com/Melonai/rust-nitro-sniper/releases/tag/2.6.3) | [![Latest Release](https://img.shields.io/github/v/release/Melonai/rust-nitro-sniper.svg)](https://github.com/Melonai/rust-nitro-sniper/releases)
 | Nitro Sniper GUI                                                                                 | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 
+| Downloads | License | Last Commit
+| :----------------: | :----------------: | :----------------:
+| [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI)
+
 ## Antivirus Info
 If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
 
