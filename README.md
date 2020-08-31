@@ -9,7 +9,11 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | Nitro Sniper GUI                                                                                 | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 
 ## Antivirus Info
-If your Antivirus flags this program as a Virus, please head over to [here](/issues/1)
+If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
+
+## Disclaimer
+This can get your account **permanently** banned if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
+I and the owners of the Nitro Snipers are **___not___** responsible in any **___damages or bans___** that may occur when using this application. **Use it at your own risk.**
 
 ## What is Nitro Sniper GUI?
 Nitro Sniper GUI is a more friendly user interface for multiple Nitro Sniper Applications for Windows. 
@@ -32,7 +36,3 @@ Yes, indeed I did. See here:
 
 ## How to build it myself?
 Go to the [Wiki](https://github.com/PeterStrick/NitroSniperGUI/wiki) to find how to build the Nitro Sniper GUI and it´s Nitro Snipers.
-
-## Disclaimer
-This can get your account **permanently** banned if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
-I and the owners of the Nitro Snipers are **___not___** responsible in any **___damages or bans___** that may occur when using this application. **Use it at your own risk.**
