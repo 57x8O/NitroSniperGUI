@@ -1,16 +1,15 @@
 # Nitro Sniper GUI
 A more friendly User Interface for the following Nitro Snipers, that let´s you use, manage, change and automatically update them:
 
-| Nitro Snipers                                                                                    | Current Version/Commit  |
-| :----------------------------------------------------------------------------------------------: | :---------------------: |
-| [Vedzea´s Nitro Sniper Go - Coded in Go](https://github.com/Vedzaa/NitroSniperGo#nitrosnipergo)  | [ee92ebc](https://github.com/Vedzaa/NitroSniperGo/commit/ee92ebc8456512b74293a80b02250afdc2f62f67)
-| [Vedzea´s Nitro Sniper - Coded in Python](https://github.com/Vedzaa/NitroSniper)                 | [bf3acbb](https://github.com/Vedzaa/NitroSniper/commit/bf3acbb0a5ce456b57b8bc5877c06a6dbd153806)
-| [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | 2.6.3
-| Nitro Sniper GUI                                                                                 | [![Please reload your browser to see this image because your Internet might not be the best.](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
+| Nitro Snipers                                                                                    | Included Version/Commit  | Current Version
+| :----------------------------------------------------------------------------------------------: | :----------------------: | :---------------------:
+| [Vedzaa´s Nitro Sniper Go - Coded in Go](https://github.com/Vedzaa/NitroSniperGo)                | [ee92ebc - 1.1](https://github.com/Vedzaa/NitroSniperGo/commit/ee92ebc8456512b74293a80b02250afdc2f62f67) |  [![Latest Release](https://img.shields.io/github/v/release/Vedzaa/NitroSniperGo.svg)](https://github.com/Vedzaa/NitroSniperGo/releases)
+| [Vedzaa´s Nitro Sniper - Coded in Python](https://github.com/Vedzaa/NitroSniper)                 | [bf3acbb](https://github.com/Vedzaa/NitroSniper/commit/bf3acbb0a5ce456b57b8bc5877c06a6dbd153806)
+| [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | 2.6.3                    | [![Latest Release](https://img.shields.io/github/v/release/Melonai/rust-nitro-sniper.svg)](https://github.com/Melonai/rust-nitro-sniper/releases)
+| Nitro Sniper GUI                                                                                 | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 
-
-
-
+## Antivirus Info
+If your Antivirus flags this program as a Virus, please head over to [here](/issues/1)
 
 ## What is Nitro Sniper GUI?
 Nitro Sniper GUI is a more friendly user interface for multiple Nitro Sniper Applications for Windows. 
@@ -37,6 +36,3 @@ Go to the [Wiki](https://github.com/PeterStrick/NitroSniperGUI/wiki) to find how
 ## Disclaimer
 This can get your account **permanently** banned if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
 I and the owners of the Nitro Snipers are **___not___** responsible in any **___damages or bans___** that may occur when using this application. **Use it at your own risk.**
-
-## Info
-Some Antivirus Products like AVG and Avast flag NitroSniperGUI.exe, rust-nitro-sniper.exe, go-nitro-sniper.exe and /dist/sniper/sniper.exe as [**IDP.Generic**](https://howandwow.info/idp-generic/), due to it being unsigned.
