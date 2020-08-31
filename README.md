@@ -10,7 +10,7 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 
 | Downloads | License | Last Commit | Platform
 | :----------------: | :----------------: | :----------------: | :-------:
-| [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x64-orange)]()
+| [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x64-orange)](https://github.com/PeterStrick/NitroSniperGUI)
 
 ## Antivirus Info
 If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
