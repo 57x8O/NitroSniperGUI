@@ -1,5 +1,16 @@
-﻿Public Class DefaultProgramsSettings
-    Dim msg As String = "Restart to apply changes."
+﻿Imports System.Runtime.InteropServices
+
+Public Class DefaultProgramsSettings
+    Public Const WM_NCLBUTTONDOWN As Integer = &HA1
+    Public Const HT_CAPTION As Integer = &H2
+
+    <DllImport("user32.dll")>
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
+    End Function
+
+    <DllImport("user32.dll")>
+    Public Shared Function ReleaseCapture() As Boolean
+    End Function
     Private Sub DefaultProgramsSettings_Load(sender As Object, e As EventArgs) Handles MyBase.Load
 
         Application.VisualStyleState = VisualStyles.VisualStyleState.ClientAreaEnabled
@@ -70,6 +81,17 @@
         My.Settings.OpenInsde = False
         My.Settings.OpenOutside = True
         My.Settings.Save()
+    End Sub
+
+    Private Sub CloseSettingsBtn_Click(sender As Object, e As EventArgs) Handles CloseSettingsBtn.Click, Button1.Click
+        Me.Close()
+    End Sub
+
+    Private Sub Form1_MouseDown(ByVal sender As Object, ByVal e As MouseEventArgs) Handles Me.MouseDown, PictureBox7.MouseDown
+        If e.Button = MouseButtons.Left Then
+            ReleaseCapture()
+            SendMessage(Handle, WM_NCLBUTTONDOWN, HT_CAPTION, 0)
+        End If
     End Sub
 
 End Class

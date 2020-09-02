@@ -32,6 +32,7 @@ Partial Class DefaultProgramsSettings
         Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
         Me.DefaultProgramsTab = New System.Windows.Forms.TabPage()
+        Me.CloseSettingsBtn = New System.Windows.Forms.Button()
         Me.NF3 = New System.Windows.Forms.Label()
         Me.NF2 = New System.Windows.Forms.Label()
         Me.NF1 = New System.Windows.Forms.Label()
@@ -40,6 +41,7 @@ Partial Class DefaultProgramsSettings
         Me.PictureBox2 = New System.Windows.Forms.PictureBox()
         Me.PictureBox1 = New System.Windows.Forms.PictureBox()
         Me.WindowMgmntTab = New System.Windows.Forms.TabPage()
+        Me.Button1 = New System.Windows.Forms.Button()
         Me.PictureBox5 = New System.Windows.Forms.PictureBox()
         Me.PictureBox6 = New System.Windows.Forms.PictureBox()
         Me.Label4 = New System.Windows.Forms.Label()
@@ -47,6 +49,7 @@ Partial Class DefaultProgramsSettings
         Me.OutsideAppBtn = New System.Windows.Forms.RadioButton()
         Me.InsideAppBtn = New System.Windows.Forms.RadioButton()
         Me.SettingsTip = New System.Windows.Forms.ToolTip(Me.components)
+        Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
         Me.DefaultProgramsTab.SuspendLayout()
         CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
@@ -56,6 +59,7 @@ Partial Class DefaultProgramsSettings
         Me.WindowMgmntTab.SuspendLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
         'Label1
@@ -116,7 +120,7 @@ Partial Class DefaultProgramsSettings
         'Label2
         '
         Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 137)
+        Me.Label2.Location = New System.Drawing.Point(6, 204)
         Me.Label2.Name = "Label2"
         Me.Label2.Size = New System.Drawing.Size(199, 13)
         Me.Label2.TabIndex = 5
@@ -124,18 +128,17 @@ Partial Class DefaultProgramsSettings
         '
         'TabControl1
         '
-        Me.TabControl1.Alignment = System.Windows.Forms.TabAlignment.Bottom
         Me.TabControl1.Controls.Add(Me.DefaultProgramsTab)
         Me.TabControl1.Controls.Add(Me.WindowMgmntTab)
-        Me.TabControl1.Dock = System.Windows.Forms.DockStyle.Fill
-        Me.TabControl1.Location = New System.Drawing.Point(0, 0)
+        Me.TabControl1.Location = New System.Drawing.Point(168, 46)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
-        Me.TabControl1.Size = New System.Drawing.Size(329, 194)
+        Me.TabControl1.Size = New System.Drawing.Size(361, 258)
         Me.TabControl1.TabIndex = 6
         '
         'DefaultProgramsTab
         '
+        Me.DefaultProgramsTab.Controls.Add(Me.CloseSettingsBtn)
         Me.DefaultProgramsTab.Controls.Add(Me.NF3)
         Me.DefaultProgramsTab.Controls.Add(Me.NF2)
         Me.DefaultProgramsTab.Controls.Add(Me.NF1)
@@ -149,18 +152,28 @@ Partial Class DefaultProgramsSettings
         Me.DefaultProgramsTab.Controls.Add(Me.Writebtn)
         Me.DefaultProgramsTab.Controls.Add(Me.NotepadSystem32Btn)
         Me.DefaultProgramsTab.Controls.Add(Me.NotepadWinBtn)
-        Me.DefaultProgramsTab.Location = New System.Drawing.Point(4, 4)
+        Me.DefaultProgramsTab.Location = New System.Drawing.Point(4, 22)
         Me.DefaultProgramsTab.Name = "DefaultProgramsTab"
         Me.DefaultProgramsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.DefaultProgramsTab.Size = New System.Drawing.Size(321, 168)
+        Me.DefaultProgramsTab.Size = New System.Drawing.Size(353, 232)
         Me.DefaultProgramsTab.TabIndex = 0
         Me.DefaultProgramsTab.Text = "Default Programs"
         Me.DefaultProgramsTab.UseVisualStyleBackColor = True
         '
+        'CloseSettingsBtn
+        '
+        Me.CloseSettingsBtn.Location = New System.Drawing.Point(293, 199)
+        Me.CloseSettingsBtn.Name = "CloseSettingsBtn"
+        Me.CloseSettingsBtn.Size = New System.Drawing.Size(49, 23)
+        Me.CloseSettingsBtn.TabIndex = 14
+        Me.CloseSettingsBtn.Text = "Close"
+        Me.CloseSettingsBtn.UseVisualStyleBackColor = True
+        '
         'NF3
         '
         Me.NF3.AutoSize = True
-        Me.NF3.Location = New System.Drawing.Point(241, 112)
+        Me.NF3.ForeColor = System.Drawing.Color.Maroon
+        Me.NF3.Location = New System.Drawing.Point(253, 112)
         Me.NF3.Name = "NF3"
         Me.NF3.Size = New System.Drawing.Size(68, 13)
         Me.NF3.TabIndex = 13
@@ -170,7 +183,8 @@ Partial Class DefaultProgramsSettings
         'NF2
         '
         Me.NF2.AutoSize = True
-        Me.NF2.Location = New System.Drawing.Point(241, 89)
+        Me.NF2.ForeColor = System.Drawing.Color.Maroon
+        Me.NF2.Location = New System.Drawing.Point(253, 89)
         Me.NF2.Name = "NF2"
         Me.NF2.Size = New System.Drawing.Size(68, 13)
         Me.NF2.TabIndex = 12
@@ -180,7 +194,8 @@ Partial Class DefaultProgramsSettings
         'NF1
         '
         Me.NF1.AutoSize = True
-        Me.NF1.Location = New System.Drawing.Point(241, 66)
+        Me.NF1.ForeColor = System.Drawing.Color.Maroon
+        Me.NF1.Location = New System.Drawing.Point(253, 66)
         Me.NF1.Name = "NF1"
         Me.NF1.Size = New System.Drawing.Size(68, 13)
         Me.NF1.TabIndex = 11
@@ -237,19 +252,29 @@ Partial Class DefaultProgramsSettings
         '
         'WindowMgmntTab
         '
+        Me.WindowMgmntTab.Controls.Add(Me.Button1)
         Me.WindowMgmntTab.Controls.Add(Me.PictureBox5)
         Me.WindowMgmntTab.Controls.Add(Me.PictureBox6)
         Me.WindowMgmntTab.Controls.Add(Me.Label4)
         Me.WindowMgmntTab.Controls.Add(Me.Label3)
         Me.WindowMgmntTab.Controls.Add(Me.OutsideAppBtn)
         Me.WindowMgmntTab.Controls.Add(Me.InsideAppBtn)
-        Me.WindowMgmntTab.Location = New System.Drawing.Point(4, 4)
+        Me.WindowMgmntTab.Location = New System.Drawing.Point(4, 22)
         Me.WindowMgmntTab.Name = "WindowMgmntTab"
         Me.WindowMgmntTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.WindowMgmntTab.Size = New System.Drawing.Size(321, 168)
+        Me.WindowMgmntTab.Size = New System.Drawing.Size(353, 232)
         Me.WindowMgmntTab.TabIndex = 1
         Me.WindowMgmntTab.Text = "MDI Container Managment Settings"
         Me.WindowMgmntTab.UseVisualStyleBackColor = True
+        '
+        'Button1
+        '
+        Me.Button1.Location = New System.Drawing.Point(293, 199)
+        Me.Button1.Name = "Button1"
+        Me.Button1.Size = New System.Drawing.Size(49, 23)
+        Me.Button1.TabIndex = 15
+        Me.Button1.Text = "Close"
+        Me.Button1.UseVisualStyleBackColor = True
         '
         'PictureBox5
         '
@@ -276,7 +301,7 @@ Partial Class DefaultProgramsSettings
         'Label4
         '
         Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 137)
+        Me.Label4.Location = New System.Drawing.Point(6, 204)
         Me.Label4.Name = "Label4"
         Me.Label4.Size = New System.Drawing.Size(199, 13)
         Me.Label4.TabIndex = 6
@@ -322,18 +347,31 @@ Partial Class DefaultProgramsSettings
         Me.SettingsTip.ReshowDelay = 350
         Me.SettingsTip.ToolTipIcon = System.Windows.Forms.ToolTipIcon.Info
         '
+        'PictureBox7
+        '
+        Me.PictureBox7.Dock = System.Windows.Forms.DockStyle.Fill
+        Me.PictureBox7.Image = Global.NitroSniperGUI.My.Resources.Resources.win95inst_Nitro_Sniper_GUI_Settings
+        Me.PictureBox7.Location = New System.Drawing.Point(0, 0)
+        Me.PictureBox7.Name = "PictureBox7"
+        Me.PictureBox7.Size = New System.Drawing.Size(544, 319)
+        Me.PictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
+        Me.PictureBox7.TabIndex = 7
+        Me.PictureBox7.TabStop = False
+        '
         'DefaultProgramsSettings
         '
         Me.AutoScaleDimensions = New System.Drawing.SizeF(6.0!, 13.0!)
         Me.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font
         Me.AutoSizeMode = System.Windows.Forms.AutoSizeMode.GrowAndShrink
-        Me.ClientSize = New System.Drawing.Size(329, 194)
+        Me.ClientSize = New System.Drawing.Size(544, 319)
         Me.Controls.Add(Me.TabControl1)
+        Me.Controls.Add(Me.PictureBox7)
         Me.Cursor = System.Windows.Forms.Cursors.Default
-        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle
+        Me.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None
         Me.MaximizeBox = False
         Me.Name = "DefaultProgramsSettings"
         Me.ShowIcon = False
+        Me.ShowInTaskbar = False
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Settings"
         Me.TabControl1.ResumeLayout(False)
@@ -347,7 +385,9 @@ Partial Class DefaultProgramsSettings
         Me.WindowMgmntTab.PerformLayout()
         CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
         CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
+        Me.PerformLayout()
 
     End Sub
 
@@ -374,4 +414,7 @@ Partial Class DefaultProgramsSettings
     Friend WithEvents NF3 As Label
     Friend WithEvents NF2 As Label
     Friend WithEvents NF1 As Label
+    Friend WithEvents PictureBox7 As PictureBox
+    Friend WithEvents CloseSettingsBtn As Button
+    Friend WithEvents Button1 As Button
 End Class
