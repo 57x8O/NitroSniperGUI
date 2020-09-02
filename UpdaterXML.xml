@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <item>
-    <version>2.2.0.2</version>
-    <url>https://github.com/PeterStrick/NitroSniperGUI/releases/download/v2.2.0.2/NitroSniperGUI.zip</url>
+    <version>2.3.0.0</version>
+    <url>https://github.com/PeterStrick/NitroSniperGUI/releases/download/v2.3.0.0/NitroSniperGUI.zip</url>
     <changelog>https://github.com/PeterStrick/NitroSniperGUI/releases</changelog>
     <mandatory>false</mandatory>
 </item>
