@@ -21,6 +21,7 @@ Some Icons of the Microsoft® Windows® 2000 Operating System were used.
 The Help, Settings and License background Pictures come from [foone](https://twitter.com/foone)s [Sierra Death Generator](https://github.com/foone/SierraDeathGenerator)
 
 The Python and Discord Nitro Icons were found by simply making a Google search.
+#### All rights to the Icons/Images go to their respective owners.
 
 ## Disclaimer
 This can get your account **permanently** banned if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
