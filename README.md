@@ -5,13 +5,17 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | :----------------------------------------------------------------------------------------------: | :----------------------: | :---------------------:
 | [Vedzaa´s Nitro Sniper Go - Coded in Go](https://github.com/Vedzaa/NitroSniperGo)                | [ee92ebc - 1.1](https://github.com/Vedzaa/NitroSniperGo/commit/ee92ebc8456512b74293a80b02250afdc2f62f67) |  [![Latest Release](https://img.shields.io/github/v/release/Vedzaa/NitroSniperGo.svg)](https://github.com/Vedzaa/NitroSniperGo/releases)
 | [Vedzaa´s Nitro Sniper - Coded in Python](https://github.com/Vedzaa/NitroSniper)                 | [bf3acbb](https://github.com/Vedzaa/NitroSniper/commit/bf3acbb0a5ce456b57b8bc5877c06a6dbd153806) | [bf3acbb](https://github.com/Vedzaa/NitroSniper/commit/bf3acbb0a5ce456b57b8bc5877c06a6dbd153806)
-| [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | [2.6.3](https://github.com/Melonai/rust-nitro-sniper/releases/tag/2.6.3) | [![Latest Release](https://img.shields.io/github/v/release/Melonai/rust-nitro-sniper.svg)](https://github.com/Melonai/rust-nitro-sniper/releases)
+| [Melonai´s Nitro Sniper - Coded in Rust](https://github.com/Melonai/rust-nitro-sniper)           | [2.6.5](https://github.com/Melonai/rust-nitro-sniper/releases/tag/2.6.3) | [![Latest Release](https://img.shields.io/github/v/release/Melonai/rust-nitro-sniper.svg)](https://github.com/Melonai/rust-nitro-sniper/releases)
 | Nitro Sniper GUI                                                                                 | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 
 | Downloads | License | Last Commit | Platform
 | :----------------: | :----------------: | :----------------: | :-------:
 | [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x64-orange)](https://github.com/PeterStrick/NitroSniperGUI)
-
+## To-Do
+- [x] Add Snipers 
+- [ ] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON (70% done)
+- [ ] Update to the New Version of Nitro Sniper GUI that requires said config rewrites
+- [ ] Move Config to Nitro Sniper GUI Settings instead of opening a config editor window (90% done)
 ## Antivirus Info
 If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
 
@@ -21,6 +25,7 @@ Some Icons of the Microsoft® Windows® 2000 Operating System were used.
 The Help, Settings and License background Pictures come from [foone](https://twitter.com/foone)s [Sierra Death Generator](https://github.com/foone/SierraDeathGenerator)
 
 The Python and Discord Nitro Icons were found by simply making a Google search.
+#### All rights to the Icons/Images go to their respective owners.
 
 ## Disclaimer
 This can get your account **permanently** banned if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
