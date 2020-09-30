@@ -22,16 +22,13 @@ Partial Class MainMdiContainerForm
     'Das Bearbeiten mit dem Code-Editor ist nicht möglich.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Me.components = New System.ComponentModel.Container()
         Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(MainMdiContainerForm))
         Me.StatusStrip1 = New System.Windows.Forms.StatusStrip()
         Me.Status = New System.Windows.Forms.ToolStripStatusLabel()
         Me.StatusBar = New System.Windows.Forms.ToolStripProgressBar()
         Me.ToolToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.ExitToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.ConfigFilesToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.PythonNitroSniperConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.GoNitroSniperConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
-        Me.RustNitroSniperConfigToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.ToolStripSeparator1 = New System.Windows.Forms.ToolStripSeparator()
         Me.StartPythonBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.StartGoBasedNitroSniperToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
@@ -44,8 +41,9 @@ Partial Class MainMdiContainerForm
         Me.DefaultProgramSettingsToolStripMenuItem = New System.Windows.Forms.ToolStripMenuItem()
         Me.HelpToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
         Me.LicenseToolStripDropDownButton = New System.Windows.Forms.ToolStripDropDownButton()
-        Me.Panel1 = New System.Windows.Forms.Panel()
         Me.CheckForUpdatesBtn = New System.Windows.Forms.ToolStripDropDownButton()
+        Me.Panel1 = New System.Windows.Forms.Panel()
+        Me.StatusIcon = New System.Windows.Forms.NotifyIcon(Me.components)
         Me.StatusStrip1.SuspendLayout()
         Me.SuspendLayout()
         '
@@ -79,7 +77,7 @@ Partial Class MainMdiContainerForm
         '
         'ToolToolStripDropDownButton
         '
-        Me.ToolToolStripDropDownButton.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ConfigFilesToolStripMenuItem, Me.ToolStripSeparator1, Me.StartPythonBasedNitroSniperToolStripMenuItem, Me.StartGoBasedNitroSniperToolStripMenuItem, Me.StartRustBasedNitroSniperToolStripMenuItem, Me.ToolStripSeparator2, Me.WindowControlsToolStripMenuItem, Me.ToolStripSeparator3, Me.DefaultProgramSettingsToolStripMenuItem})
+        Me.ToolToolStripDropDownButton.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.ExitToolStripMenuItem, Me.ToolStripSeparator1, Me.StartPythonBasedNitroSniperToolStripMenuItem, Me.StartGoBasedNitroSniperToolStripMenuItem, Me.StartRustBasedNitroSniperToolStripMenuItem, Me.ToolStripSeparator2, Me.WindowControlsToolStripMenuItem, Me.ToolStripSeparator3, Me.DefaultProgramSettingsToolStripMenuItem})
         Me.ToolToolStripDropDownButton.Image = CType(resources.GetObject("ToolToolStripDropDownButton.Image"), System.Drawing.Image)
         Me.ToolToolStripDropDownButton.ImageTransparentColor = System.Drawing.Color.Magenta
         Me.ToolToolStripDropDownButton.Name = "ToolToolStripDropDownButton"
@@ -92,35 +90,6 @@ Partial Class MainMdiContainerForm
         Me.ExitToolStripMenuItem.Name = "ExitToolStripMenuItem"
         Me.ExitToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
         Me.ExitToolStripMenuItem.Text = "Exit"
-        '
-        'ConfigFilesToolStripMenuItem
-        '
-        Me.ConfigFilesToolStripMenuItem.DropDownItems.AddRange(New System.Windows.Forms.ToolStripItem() {Me.PythonNitroSniperConfigToolStripMenuItem, Me.GoNitroSniperConfigToolStripMenuItem, Me.RustNitroSniperConfigToolStripMenuItem})
-        Me.ConfigFilesToolStripMenuItem.Image = CType(resources.GetObject("ConfigFilesToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.ConfigFilesToolStripMenuItem.Name = "ConfigFilesToolStripMenuItem"
-        Me.ConfigFilesToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
-        Me.ConfigFilesToolStripMenuItem.Text = "Config Files"
-        '
-        'PythonNitroSniperConfigToolStripMenuItem
-        '
-        Me.PythonNitroSniperConfigToolStripMenuItem.Image = CType(resources.GetObject("PythonNitroSniperConfigToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.PythonNitroSniperConfigToolStripMenuItem.Name = "PythonNitroSniperConfigToolStripMenuItem"
-        Me.PythonNitroSniperConfigToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.PythonNitroSniperConfigToolStripMenuItem.Text = "Python Nitro Sniper Config"
-        '
-        'GoNitroSniperConfigToolStripMenuItem
-        '
-        Me.GoNitroSniperConfigToolStripMenuItem.Image = CType(resources.GetObject("GoNitroSniperConfigToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.GoNitroSniperConfigToolStripMenuItem.Name = "GoNitroSniperConfigToolStripMenuItem"
-        Me.GoNitroSniperConfigToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.GoNitroSniperConfigToolStripMenuItem.Text = "Go Nitro Sniper Config"
-        '
-        'RustNitroSniperConfigToolStripMenuItem
-        '
-        Me.RustNitroSniperConfigToolStripMenuItem.Image = CType(resources.GetObject("RustNitroSniperConfigToolStripMenuItem.Image"), System.Drawing.Image)
-        Me.RustNitroSniperConfigToolStripMenuItem.Name = "RustNitroSniperConfigToolStripMenuItem"
-        Me.RustNitroSniperConfigToolStripMenuItem.Size = New System.Drawing.Size(217, 22)
-        Me.RustNitroSniperConfigToolStripMenuItem.Text = "Rust Nitro Sniper Config"
         '
         'ToolStripSeparator1
         '
@@ -194,7 +163,7 @@ Partial Class MainMdiContainerForm
         Me.DefaultProgramSettingsToolStripMenuItem.Image = CType(resources.GetObject("DefaultProgramSettingsToolStripMenuItem.Image"), System.Drawing.Image)
         Me.DefaultProgramSettingsToolStripMenuItem.Name = "DefaultProgramSettingsToolStripMenuItem"
         Me.DefaultProgramSettingsToolStripMenuItem.Size = New System.Drawing.Size(239, 22)
-        Me.DefaultProgramSettingsToolStripMenuItem.Text = "GUI  Settings"
+        Me.DefaultProgramSettingsToolStripMenuItem.Text = "Settings"
         '
         'HelpToolStripDropDownButton
         '
@@ -214,6 +183,15 @@ Partial Class MainMdiContainerForm
         Me.LicenseToolStripDropDownButton.Size = New System.Drawing.Size(66, 20)
         Me.LicenseToolStripDropDownButton.Text = "License"
         '
+        'CheckForUpdatesBtn
+        '
+        Me.CheckForUpdatesBtn.Image = CType(resources.GetObject("CheckForUpdatesBtn.Image"), System.Drawing.Image)
+        Me.CheckForUpdatesBtn.ImageTransparentColor = System.Drawing.Color.Magenta
+        Me.CheckForUpdatesBtn.Name = "CheckForUpdatesBtn"
+        Me.CheckForUpdatesBtn.ShowDropDownArrow = False
+        Me.CheckForUpdatesBtn.Size = New System.Drawing.Size(124, 20)
+        Me.CheckForUpdatesBtn.Text = "Check for Updates"
+        '
         'Panel1
         '
         Me.Panel1.AllowDrop = True
@@ -228,14 +206,12 @@ Partial Class MainMdiContainerForm
         Me.Panel1.TabIndex = 1
         Me.Panel1.TabStop = True
         '
-        'CheckForUpdatesBtn
+        'StatusIcon
         '
-        Me.CheckForUpdatesBtn.Image = CType(resources.GetObject("CheckForUpdatesBtn.Image"), System.Drawing.Image)
-        Me.CheckForUpdatesBtn.ImageTransparentColor = System.Drawing.Color.Magenta
-        Me.CheckForUpdatesBtn.Name = "CheckForUpdatesBtn"
-        Me.CheckForUpdatesBtn.ShowDropDownArrow = False
-        Me.CheckForUpdatesBtn.Size = New System.Drawing.Size(124, 20)
-        Me.CheckForUpdatesBtn.Text = "Check for Updates"
+        Me.StatusIcon.BalloonTipIcon = System.Windows.Forms.ToolTipIcon.Info
+        Me.StatusIcon.Icon = CType(resources.GetObject("StatusIcon.Icon"), System.Drawing.Icon)
+        Me.StatusIcon.Text = "Nitro Sniper GUI"
+        Me.StatusIcon.Visible = True
         '
         'MainMdiContainerForm
         '
@@ -262,9 +238,6 @@ Partial Class MainMdiContainerForm
     Friend WithEvents ToolToolStripDropDownButton As ToolStripDropDownButton
     Friend WithEvents ExitToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator1 As ToolStripSeparator
-    Friend WithEvents ConfigFilesToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents RustNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents GoNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StartGoBasedNitroSniperToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents StartRustBasedNitroSniperToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents ToolStripSeparator2 As ToolStripSeparator
@@ -276,6 +249,6 @@ Partial Class MainMdiContainerForm
     Friend WithEvents MinimizeAllWindowsToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LicenseToolStripDropDownButton As ToolStripDropDownButton
     Friend WithEvents StartPythonBasedNitroSniperToolStripMenuItem As ToolStripMenuItem
-    Friend WithEvents PythonNitroSniperConfigToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents CheckForUpdatesBtn As ToolStripDropDownButton
+    Friend WithEvents StatusIcon As NotifyIcon
 End Class

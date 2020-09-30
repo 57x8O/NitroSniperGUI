@@ -69,14 +69,18 @@
     <ApplicationIcon>0.ico</ApplicationIcon>
   </PropertyGroup>
   <PropertyGroup>
-    <SignAssembly>true</SignAssembly>
+    <SignAssembly>false</SignAssembly>
   </PropertyGroup>
   <PropertyGroup>
-    <AssemblyOriginatorKeyFile>Cert.pfx</AssemblyOriginatorKeyFile>
+    <AssemblyOriginatorKeyFile>
+    </AssemblyOriginatorKeyFile>
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="AutoUpdater.NET, Version=1.6.0.0, Culture=neutral, PublicKeyToken=501435c91b35f4bc, processorArchitecture=MSIL">
       <HintPath>..\packages\Autoupdater.NET.Official.1.6.0\lib\net40\AutoUpdater.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Newtonsoft.Json, Version=12.0.0.0, Culture=neutral, PublicKeyToken=30ad4fe6b2a6aeed, processorArchitecture=MSIL">
+      <HintPath>..\packages\Newtonsoft.Json.12.0.3\lib\net45\Newtonsoft.Json.dll</HintPath>
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.Data" />
@@ -145,6 +149,18 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <Compile Include="setnextformthemetowindowsclassic.Designer.vb">
+      <DependentUpon>setnextformthemetowindowsclassic.vb</DependentUpon>
+    </Compile>
+    <Compile Include="setnextformthemetowindowsclassic.vb">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="testform.Designer.vb">
+      <DependentUpon>testform.vb</DependentUpon>
+    </Compile>
+    <Compile Include="testform.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Include="DefaultProgramsSettings.resx">
@@ -165,9 +181,14 @@
       <CustomToolNamespace>My.Resources</CustomToolNamespace>
       <SubType>Designer</SubType>
     </EmbeddedResource>
+    <EmbeddedResource Include="setnextformthemetowindowsclassic.resx">
+      <DependentUpon>setnextformthemetowindowsclassic.vb</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="testform.resx">
+      <DependentUpon>testform.vb</DependentUpon>
+    </EmbeddedResource>
   </ItemGroup>
   <ItemGroup>
-    <None Include="Cert.pfx" />
     <None Include="My Project\app.manifest" />
     <None Include="My Project\Application.myapp">
       <Generator>MyApplicationCodeGenerator</Generator>
@@ -189,8 +210,8 @@
   <ItemGroup>
     <Content Include="0.ico" />
     <Content Include="Resources\10.ico" />
+    <None Include="Resources\help9.png" />
     <None Include="Resources\help11-v2.png" />
-    <None Include="Resources\help11-v2.bmp" />
     <None Include="Resources\help1.png" />
     <None Include="Resources\help2.png" />
     <None Include="Resources\help3.png" />
@@ -199,7 +220,6 @@
     <None Include="Resources\help6.png" />
     <None Include="Resources\help7.png" />
     <None Include="Resources\help8.png" />
-    <None Include="Resources\help9.png" />
     <None Include="Resources\help10.png" />
     <None Include="Resources\help11.png" />
     <None Include="Resources\win95inst-Nitro Sniper GUI License.png" />

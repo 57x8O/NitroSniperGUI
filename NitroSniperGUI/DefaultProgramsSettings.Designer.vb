@@ -23,320 +23,331 @@ Partial Class DefaultProgramsSettings
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
         Me.components = New System.ComponentModel.Container()
-        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DefaultProgramsSettings))
-        Me.Label1 = New System.Windows.Forms.Label()
-        Me.SystemDefinedBtn = New System.Windows.Forms.RadioButton()
-        Me.NotepadSystem32Btn = New System.Windows.Forms.RadioButton()
-        Me.NotepadWinBtn = New System.Windows.Forms.RadioButton()
-        Me.Writebtn = New System.Windows.Forms.RadioButton()
-        Me.Label2 = New System.Windows.Forms.Label()
         Me.TabControl1 = New System.Windows.Forms.TabControl()
-        Me.DefaultProgramsTab = New System.Windows.Forms.TabPage()
-        Me.CloseSettingsBtn = New System.Windows.Forms.Button()
-        Me.NF3 = New System.Windows.Forms.Label()
-        Me.NF2 = New System.Windows.Forms.Label()
-        Me.NF1 = New System.Windows.Forms.Label()
-        Me.PictureBox4 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox3 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox2 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox1 = New System.Windows.Forms.PictureBox()
-        Me.WindowMgmntTab = New System.Windows.Forms.TabPage()
-        Me.Button1 = New System.Windows.Forms.Button()
-        Me.PictureBox5 = New System.Windows.Forms.PictureBox()
-        Me.PictureBox6 = New System.Windows.Forms.PictureBox()
-        Me.Label4 = New System.Windows.Forms.Label()
-        Me.Label3 = New System.Windows.Forms.Label()
-        Me.OutsideAppBtn = New System.Windows.Forms.RadioButton()
-        Me.InsideAppBtn = New System.Windows.Forms.RadioButton()
+        Me.SniperSettingTabs = New System.Windows.Forms.TabPage()
+        Me.TabControl2 = New System.Windows.Forms.TabControl()
+        Me.GoSniperTab = New System.Windows.Forms.TabPage()
+        Me.Label1 = New System.Windows.Forms.Label()
+        Me.Button6 = New System.Windows.Forms.Button()
+        Me.Button3 = New System.Windows.Forms.Button()
+        Me.Go_EnableGiveaway = New System.Windows.Forms.CheckBox()
+        Me.Label10 = New System.Windows.Forms.Label()
+        Me.Go_CooldownInHours = New System.Windows.Forms.TextBox()
+        Me.Label9 = New System.Windows.Forms.Label()
+        Me.Go_MaxNitroBeforeCooldown = New System.Windows.Forms.TextBox()
+        Me.Label7 = New System.Windows.Forms.Label()
+        Me.Go_Token = New System.Windows.Forms.TextBox()
+        Me.RustSniperTab = New System.Windows.Forms.TabPage()
+        Me.Label2 = New System.Windows.Forms.Label()
+        Me.Button5 = New System.Windows.Forms.Button()
+        Me.Button2 = New System.Windows.Forms.Button()
+        Me.Rust_EnableSnipe = New System.Windows.Forms.CheckBox()
+        Me.Label6 = New System.Windows.Forms.Label()
+        Me.Rust_WebHook = New System.Windows.Forms.TextBox()
+        Me.Label5 = New System.Windows.Forms.Label()
+        Me.Rust_Token = New System.Windows.Forms.TextBox()
+        Me.PythonSniperTab = New System.Windows.Forms.TabPage()
+        Me.Label11 = New System.Windows.Forms.Label()
+        Me.Button7 = New System.Windows.Forms.Button()
+        Me.Button4 = New System.Windows.Forms.Button()
+        Me.Label8 = New System.Windows.Forms.Label()
+        Me.Python_Token = New System.Windows.Forms.TextBox()
         Me.SettingsTip = New System.Windows.Forms.ToolTip(Me.components)
         Me.PictureBox7 = New System.Windows.Forms.PictureBox()
         Me.TabControl1.SuspendLayout()
-        Me.DefaultProgramsTab.SuspendLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).BeginInit()
-        Me.WindowMgmntTab.SuspendLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).BeginInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).BeginInit()
+        Me.SniperSettingTabs.SuspendLayout()
+        Me.TabControl2.SuspendLayout()
+        Me.GoSniperTab.SuspendLayout()
+        Me.RustSniperTab.SuspendLayout()
+        Me.PythonSniperTab.SuspendLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).BeginInit()
         Me.SuspendLayout()
         '
-        'Label1
-        '
-        Me.Label1.AutoSize = True
-        Me.Label1.Location = New System.Drawing.Point(6, 12)
-        Me.Label1.Name = "Label1"
-        Me.Label1.Size = New System.Drawing.Size(150, 13)
-        Me.Label1.TabIndex = 0
-        Me.Label1.Text = "Default Program for JSON files"
-        '
-        'SystemDefinedBtn
-        '
-        Me.SystemDefinedBtn.AutoSize = True
-        Me.SystemDefinedBtn.Checked = True
-        Me.SystemDefinedBtn.Location = New System.Drawing.Point(9, 39)
-        Me.SystemDefinedBtn.Name = "SystemDefinedBtn"
-        Me.SystemDefinedBtn.Size = New System.Drawing.Size(278, 17)
-        Me.SystemDefinedBtn.TabIndex = 1
-        Me.SystemDefinedBtn.TabStop = True
-        Me.SystemDefinedBtn.Tag = "i"
-        Me.SystemDefinedBtn.Text = "System defined (System chooses what to open it with)"
-        Me.SystemDefinedBtn.UseVisualStyleBackColor = True
-        '
-        'NotepadSystem32Btn
-        '
-        Me.NotepadSystem32Btn.AutoSize = True
-        Me.NotepadSystem32Btn.Enabled = False
-        Me.NotepadSystem32Btn.Location = New System.Drawing.Point(9, 62)
-        Me.NotepadSystem32Btn.Name = "NotepadSystem32Btn"
-        Me.NotepadSystem32Btn.Size = New System.Drawing.Size(195, 17)
-        Me.NotepadSystem32Btn.TabIndex = 2
-        Me.NotepadSystem32Btn.Text = "Notepad in C:\Windows\System32\"
-        Me.NotepadSystem32Btn.UseVisualStyleBackColor = True
-        '
-        'NotepadWinBtn
-        '
-        Me.NotepadWinBtn.AutoSize = True
-        Me.NotepadWinBtn.Enabled = False
-        Me.NotepadWinBtn.Location = New System.Drawing.Point(9, 85)
-        Me.NotepadWinBtn.Name = "NotepadWinBtn"
-        Me.NotepadWinBtn.Size = New System.Drawing.Size(179, 17)
-        Me.NotepadWinBtn.TabIndex = 3
-        Me.NotepadWinBtn.Text = "Notepad (32-bit) in C:\Windows\"
-        Me.NotepadWinBtn.UseVisualStyleBackColor = True
-        '
-        'Writebtn
-        '
-        Me.Writebtn.AutoSize = True
-        Me.Writebtn.Enabled = False
-        Me.Writebtn.Location = New System.Drawing.Point(9, 108)
-        Me.Writebtn.Name = "Writebtn"
-        Me.Writebtn.Size = New System.Drawing.Size(178, 17)
-        Me.Writebtn.TabIndex = 4
-        Me.Writebtn.Text = "Write/WordPad in C:\Windows\"
-        Me.Writebtn.UseVisualStyleBackColor = True
-        '
-        'Label2
-        '
-        Me.Label2.AutoSize = True
-        Me.Label2.Location = New System.Drawing.Point(6, 204)
-        Me.Label2.Name = "Label2"
-        Me.Label2.Size = New System.Drawing.Size(199, 13)
-        Me.Label2.TabIndex = 5
-        Me.Label2.Text = "Restart NitroSniperGUI to apply changes"
-        '
         'TabControl1
         '
-        Me.TabControl1.Controls.Add(Me.DefaultProgramsTab)
-        Me.TabControl1.Controls.Add(Me.WindowMgmntTab)
+        Me.TabControl1.Controls.Add(Me.SniperSettingTabs)
         Me.TabControl1.Location = New System.Drawing.Point(168, 46)
         Me.TabControl1.Name = "TabControl1"
         Me.TabControl1.SelectedIndex = 0
         Me.TabControl1.Size = New System.Drawing.Size(361, 258)
         Me.TabControl1.TabIndex = 6
         '
-        'DefaultProgramsTab
+        'SniperSettingTabs
         '
-        Me.DefaultProgramsTab.Controls.Add(Me.CloseSettingsBtn)
-        Me.DefaultProgramsTab.Controls.Add(Me.NF3)
-        Me.DefaultProgramsTab.Controls.Add(Me.NF2)
-        Me.DefaultProgramsTab.Controls.Add(Me.NF1)
-        Me.DefaultProgramsTab.Controls.Add(Me.PictureBox4)
-        Me.DefaultProgramsTab.Controls.Add(Me.PictureBox3)
-        Me.DefaultProgramsTab.Controls.Add(Me.PictureBox2)
-        Me.DefaultProgramsTab.Controls.Add(Me.PictureBox1)
-        Me.DefaultProgramsTab.Controls.Add(Me.Label1)
-        Me.DefaultProgramsTab.Controls.Add(Me.Label2)
-        Me.DefaultProgramsTab.Controls.Add(Me.SystemDefinedBtn)
-        Me.DefaultProgramsTab.Controls.Add(Me.Writebtn)
-        Me.DefaultProgramsTab.Controls.Add(Me.NotepadSystem32Btn)
-        Me.DefaultProgramsTab.Controls.Add(Me.NotepadWinBtn)
-        Me.DefaultProgramsTab.Location = New System.Drawing.Point(4, 22)
-        Me.DefaultProgramsTab.Name = "DefaultProgramsTab"
-        Me.DefaultProgramsTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.DefaultProgramsTab.Size = New System.Drawing.Size(353, 232)
-        Me.DefaultProgramsTab.TabIndex = 0
-        Me.DefaultProgramsTab.Text = "Default Programs"
-        Me.DefaultProgramsTab.UseVisualStyleBackColor = True
+        Me.SniperSettingTabs.Controls.Add(Me.TabControl2)
+        Me.SniperSettingTabs.Location = New System.Drawing.Point(4, 22)
+        Me.SniperSettingTabs.Name = "SniperSettingTabs"
+        Me.SniperSettingTabs.Padding = New System.Windows.Forms.Padding(3)
+        Me.SniperSettingTabs.Size = New System.Drawing.Size(353, 232)
+        Me.SniperSettingTabs.TabIndex = 2
+        Me.SniperSettingTabs.Text = "Sniper Settings"
+        Me.SniperSettingTabs.UseVisualStyleBackColor = True
         '
-        'CloseSettingsBtn
+        'TabControl2
         '
-        Me.CloseSettingsBtn.Location = New System.Drawing.Point(293, 199)
-        Me.CloseSettingsBtn.Name = "CloseSettingsBtn"
-        Me.CloseSettingsBtn.Size = New System.Drawing.Size(49, 23)
-        Me.CloseSettingsBtn.TabIndex = 14
-        Me.CloseSettingsBtn.Text = "Close"
-        Me.CloseSettingsBtn.UseVisualStyleBackColor = True
+        Me.TabControl2.Controls.Add(Me.GoSniperTab)
+        Me.TabControl2.Controls.Add(Me.RustSniperTab)
+        Me.TabControl2.Controls.Add(Me.PythonSniperTab)
+        Me.TabControl2.Location = New System.Drawing.Point(0, 1)
+        Me.TabControl2.Name = "TabControl2"
+        Me.TabControl2.SelectedIndex = 0
+        Me.TabControl2.Size = New System.Drawing.Size(357, 235)
+        Me.TabControl2.TabIndex = 0
         '
-        'NF3
+        'GoSniperTab
         '
-        Me.NF3.AutoSize = True
-        Me.NF3.ForeColor = System.Drawing.Color.Maroon
-        Me.NF3.Location = New System.Drawing.Point(253, 112)
-        Me.NF3.Name = "NF3"
-        Me.NF3.Size = New System.Drawing.Size(68, 13)
-        Me.NF3.TabIndex = 13
-        Me.NF3.Text = "Not installed."
-        Me.SettingsTip.SetToolTip(Me.NF3, "Install WordPad in order to use this option.")
+        Me.GoSniperTab.Controls.Add(Me.Label1)
+        Me.GoSniperTab.Controls.Add(Me.Button6)
+        Me.GoSniperTab.Controls.Add(Me.Button3)
+        Me.GoSniperTab.Controls.Add(Me.Go_EnableGiveaway)
+        Me.GoSniperTab.Controls.Add(Me.Label10)
+        Me.GoSniperTab.Controls.Add(Me.Go_CooldownInHours)
+        Me.GoSniperTab.Controls.Add(Me.Label9)
+        Me.GoSniperTab.Controls.Add(Me.Go_MaxNitroBeforeCooldown)
+        Me.GoSniperTab.Controls.Add(Me.Label7)
+        Me.GoSniperTab.Controls.Add(Me.Go_Token)
+        Me.GoSniperTab.Location = New System.Drawing.Point(4, 22)
+        Me.GoSniperTab.Name = "GoSniperTab"
+        Me.GoSniperTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.GoSniperTab.Size = New System.Drawing.Size(349, 209)
+        Me.GoSniperTab.TabIndex = 1
+        Me.GoSniperTab.Text = "Go based Sniper"
+        Me.GoSniperTab.UseVisualStyleBackColor = True
         '
-        'NF2
+        'Label1
         '
-        Me.NF2.AutoSize = True
-        Me.NF2.ForeColor = System.Drawing.Color.Maroon
-        Me.NF2.Location = New System.Drawing.Point(253, 89)
-        Me.NF2.Name = "NF2"
-        Me.NF2.Size = New System.Drawing.Size(68, 13)
-        Me.NF2.TabIndex = 12
-        Me.NF2.Text = "Not installed."
-        Me.SettingsTip.SetToolTip(Me.NF2, "Install Notepad in order to use this option.")
+        Me.Label1.AutoSize = True
+        Me.Label1.Location = New System.Drawing.Point(6, 164)
+        Me.Label1.Name = "Label1"
+        Me.Label1.Size = New System.Drawing.Size(201, 13)
+        Me.Label1.TabIndex = 18
+        Me.Label1.Text = "Restart the Nitro Sniper to apply changes"
         '
-        'NF1
+        'Button6
         '
-        Me.NF1.AutoSize = True
-        Me.NF1.ForeColor = System.Drawing.Color.Maroon
-        Me.NF1.Location = New System.Drawing.Point(253, 66)
-        Me.NF1.Name = "NF1"
-        Me.NF1.Size = New System.Drawing.Size(68, 13)
-        Me.NF1.TabIndex = 11
-        Me.NF1.Text = "Not installed."
-        Me.SettingsTip.SetToolTip(Me.NF1, "Install Notepad in order to use this option.")
+        Me.Button6.Location = New System.Drawing.Point(9, 180)
+        Me.Button6.Name = "Button6"
+        Me.Button6.Size = New System.Drawing.Size(140, 23)
+        Me.Button6.TabIndex = 17
+        Me.Button6.Text = "Edit manually"
+        Me.SettingsTip.SetToolTip(Me.Button6, "Let's you change the config file manually, by opening notepad or any program of y" &
+        "our choice.")
+        Me.Button6.UseVisualStyleBackColor = True
         '
-        'PictureBox4
+        'Button3
         '
-        Me.PictureBox4.Image = CType(resources.GetObject("PictureBox4.Image"), System.Drawing.Image)
-        Me.PictureBox4.Location = New System.Drawing.Point(193, 109)
-        Me.PictureBox4.Name = "PictureBox4"
-        Me.PictureBox4.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox4.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox4.TabIndex = 10
-        Me.PictureBox4.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox4, "Opens the config file with Wordpad.")
-        Me.PictureBox4.Visible = False
+        Me.Button3.Location = New System.Drawing.Point(241, 180)
+        Me.Button3.Name = "Button3"
+        Me.Button3.Size = New System.Drawing.Size(102, 23)
+        Me.Button3.TabIndex = 15
+        Me.Button3.Text = "Close and Save"
+        Me.Button3.UseVisualStyleBackColor = True
         '
-        'PictureBox3
+        'Go_EnableGiveaway
         '
-        Me.PictureBox3.Image = CType(resources.GetObject("PictureBox3.Image"), System.Drawing.Image)
-        Me.PictureBox3.Location = New System.Drawing.Point(193, 85)
-        Me.PictureBox3.Name = "PictureBox3"
-        Me.PictureBox3.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox3.TabIndex = 9
-        Me.PictureBox3.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox3, "Opens the config file with C:\Windows\Notepad.exe")
-        Me.PictureBox3.Visible = False
+        Me.Go_EnableGiveaway.AutoSize = True
+        Me.Go_EnableGiveaway.Location = New System.Drawing.Point(9, 91)
+        Me.Go_EnableGiveaway.Name = "Go_EnableGiveaway"
+        Me.Go_EnableGiveaway.Size = New System.Drawing.Size(140, 17)
+        Me.Go_EnableGiveaway.TabIndex = 8
+        Me.Go_EnableGiveaway.Text = "Enable Giveaway Joiner"
+        Me.Go_EnableGiveaway.UseVisualStyleBackColor = True
         '
-        'PictureBox2
+        'Label10
         '
-        Me.PictureBox2.Image = CType(resources.GetObject("PictureBox2.Image"), System.Drawing.Image)
-        Me.PictureBox2.Location = New System.Drawing.Point(210, 63)
-        Me.PictureBox2.Name = "PictureBox2"
-        Me.PictureBox2.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox2.TabIndex = 8
-        Me.PictureBox2.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox2, "Opens the config file with C:\Windows\System32\Notepad.exe")
-        Me.PictureBox2.Visible = False
+        Me.Label10.AutoSize = True
+        Me.Label10.Location = New System.Drawing.Point(6, 64)
+        Me.Label10.Name = "Label10"
+        Me.Label10.Size = New System.Drawing.Size(94, 13)
+        Me.Label10.TabIndex = 7
+        Me.Label10.Text = "Cooldown in hours"
         '
-        'PictureBox1
+        'Go_CooldownInHours
         '
-        Me.PictureBox1.Image = CType(resources.GetObject("PictureBox1.Image"), System.Drawing.Image)
-        Me.PictureBox1.Location = New System.Drawing.Point(293, 40)
-        Me.PictureBox1.Name = "PictureBox1"
-        Me.PictureBox1.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox1.TabIndex = 7
-        Me.PictureBox1.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox1, "Let's the System choose, what to open JSON files with. You may be asked to choose" &
-        " a application yourself.")
+        Me.Go_CooldownInHours.Location = New System.Drawing.Point(123, 61)
+        Me.Go_CooldownInHours.Name = "Go_CooldownInHours"
+        Me.Go_CooldownInHours.Size = New System.Drawing.Size(49, 20)
+        Me.Go_CooldownInHours.TabIndex = 6
         '
-        'WindowMgmntTab
+        'Label9
         '
-        Me.WindowMgmntTab.Controls.Add(Me.Button1)
-        Me.WindowMgmntTab.Controls.Add(Me.PictureBox5)
-        Me.WindowMgmntTab.Controls.Add(Me.PictureBox6)
-        Me.WindowMgmntTab.Controls.Add(Me.Label4)
-        Me.WindowMgmntTab.Controls.Add(Me.Label3)
-        Me.WindowMgmntTab.Controls.Add(Me.OutsideAppBtn)
-        Me.WindowMgmntTab.Controls.Add(Me.InsideAppBtn)
-        Me.WindowMgmntTab.Location = New System.Drawing.Point(4, 22)
-        Me.WindowMgmntTab.Name = "WindowMgmntTab"
-        Me.WindowMgmntTab.Padding = New System.Windows.Forms.Padding(3)
-        Me.WindowMgmntTab.Size = New System.Drawing.Size(353, 232)
-        Me.WindowMgmntTab.TabIndex = 1
-        Me.WindowMgmntTab.Text = "MDI Container Managment Settings"
-        Me.WindowMgmntTab.UseVisualStyleBackColor = True
+        Me.Label9.AutoSize = True
+        Me.Label9.Location = New System.Drawing.Point(6, 38)
+        Me.Label9.Name = "Label9"
+        Me.Label9.Size = New System.Drawing.Size(92, 13)
+        Me.Label9.TabIndex = 5
+        Me.Label9.Text = "Max Nitro to snipe"
         '
-        'Button1
+        'Go_MaxNitroBeforeCooldown
         '
-        Me.Button1.Location = New System.Drawing.Point(293, 199)
-        Me.Button1.Name = "Button1"
-        Me.Button1.Size = New System.Drawing.Size(49, 23)
-        Me.Button1.TabIndex = 15
-        Me.Button1.Text = "Close"
-        Me.Button1.UseVisualStyleBackColor = True
+        Me.Go_MaxNitroBeforeCooldown.Location = New System.Drawing.Point(123, 35)
+        Me.Go_MaxNitroBeforeCooldown.Name = "Go_MaxNitroBeforeCooldown"
+        Me.Go_MaxNitroBeforeCooldown.Size = New System.Drawing.Size(49, 20)
+        Me.Go_MaxNitroBeforeCooldown.TabIndex = 4
         '
-        'PictureBox5
+        'Label7
         '
-        Me.PictureBox5.Image = CType(resources.GetObject("PictureBox5.Image"), System.Drawing.Image)
-        Me.PictureBox5.Location = New System.Drawing.Point(232, 85)
-        Me.PictureBox5.Name = "PictureBox5"
-        Me.PictureBox5.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox5.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox5.TabIndex = 12
-        Me.PictureBox5.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox5, "Opens the Editor Window outside Nitro Sniper GUI.")
+        Me.Label7.AutoSize = True
+        Me.Label7.Location = New System.Drawing.Point(6, 12)
+        Me.Label7.Name = "Label7"
+        Me.Label7.Size = New System.Drawing.Size(38, 13)
+        Me.Label7.TabIndex = 3
+        Me.Label7.Text = "Token"
         '
-        'PictureBox6
+        'Go_Token
         '
-        Me.PictureBox6.Image = CType(resources.GetObject("PictureBox6.Image"), System.Drawing.Image)
-        Me.PictureBox6.Location = New System.Drawing.Point(225, 51)
-        Me.PictureBox6.Name = "PictureBox6"
-        Me.PictureBox6.Size = New System.Drawing.Size(16, 16)
-        Me.PictureBox6.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize
-        Me.PictureBox6.TabIndex = 11
-        Me.PictureBox6.TabStop = False
-        Me.SettingsTip.SetToolTip(Me.PictureBox6, "Opens the Editor Window inside Nitro Sniper GUI.")
+        Me.Go_Token.Location = New System.Drawing.Point(50, 9)
+        Me.Go_Token.Name = "Go_Token"
+        Me.Go_Token.Size = New System.Drawing.Size(293, 20)
+        Me.Go_Token.TabIndex = 2
         '
-        'Label4
+        'RustSniperTab
         '
-        Me.Label4.AutoSize = True
-        Me.Label4.Location = New System.Drawing.Point(6, 204)
-        Me.Label4.Name = "Label4"
-        Me.Label4.Size = New System.Drawing.Size(199, 13)
-        Me.Label4.TabIndex = 6
-        Me.Label4.Text = "Restart NitroSniperGUI to apply changes"
+        Me.RustSniperTab.Controls.Add(Me.Label2)
+        Me.RustSniperTab.Controls.Add(Me.Button5)
+        Me.RustSniperTab.Controls.Add(Me.Button2)
+        Me.RustSniperTab.Controls.Add(Me.Rust_EnableSnipe)
+        Me.RustSniperTab.Controls.Add(Me.Label6)
+        Me.RustSniperTab.Controls.Add(Me.Rust_WebHook)
+        Me.RustSniperTab.Controls.Add(Me.Label5)
+        Me.RustSniperTab.Controls.Add(Me.Rust_Token)
+        Me.RustSniperTab.Location = New System.Drawing.Point(4, 22)
+        Me.RustSniperTab.Name = "RustSniperTab"
+        Me.RustSniperTab.Padding = New System.Windows.Forms.Padding(3)
+        Me.RustSniperTab.Size = New System.Drawing.Size(349, 209)
+        Me.RustSniperTab.TabIndex = 0
+        Me.RustSniperTab.Text = "Rust based Sniper"
+        Me.RustSniperTab.UseVisualStyleBackColor = True
         '
-        'Label3
+        'Label2
         '
-        Me.Label3.AutoSize = True
-        Me.Label3.Location = New System.Drawing.Point(8, 24)
-        Me.Label3.Name = "Label3"
-        Me.Label3.Size = New System.Drawing.Size(162, 13)
-        Me.Label3.TabIndex = 2
-        Me.Label3.Text = "Config Editor Window Placement"
+        Me.Label2.AutoSize = True
+        Me.Label2.Location = New System.Drawing.Point(6, 164)
+        Me.Label2.Name = "Label2"
+        Me.Label2.Size = New System.Drawing.Size(201, 13)
+        Me.Label2.TabIndex = 19
+        Me.Label2.Text = "Restart the Nitro Sniper to apply changes"
         '
-        'OutsideAppBtn
+        'Button5
         '
-        Me.OutsideAppBtn.AutoSize = True
-        Me.OutsideAppBtn.Checked = True
-        Me.OutsideAppBtn.Location = New System.Drawing.Point(11, 85)
-        Me.OutsideAppBtn.Name = "OutsideAppBtn"
-        Me.OutsideAppBtn.Size = New System.Drawing.Size(215, 17)
-        Me.OutsideAppBtn.TabIndex = 1
-        Me.OutsideAppBtn.TabStop = True
-        Me.OutsideAppBtn.Text = "Open Editor Window outside Application"
-        Me.OutsideAppBtn.UseVisualStyleBackColor = True
+        Me.Button5.Location = New System.Drawing.Point(9, 180)
+        Me.Button5.Name = "Button5"
+        Me.Button5.Size = New System.Drawing.Size(140, 23)
+        Me.Button5.TabIndex = 16
+        Me.Button5.Text = "Edit manually (advanced)"
+        Me.SettingsTip.SetToolTip(Me.Button5, "Let's you change the config file manually, aswell as add sub tokens and guild bla" &
+        "cklists. See documentation for details.")
+        Me.Button5.UseVisualStyleBackColor = True
         '
-        'InsideAppBtn
+        'Button2
         '
-        Me.InsideAppBtn.AutoSize = True
-        Me.InsideAppBtn.Location = New System.Drawing.Point(11, 51)
-        Me.InsideAppBtn.Name = "InsideAppBtn"
-        Me.InsideAppBtn.Size = New System.Drawing.Size(208, 17)
-        Me.InsideAppBtn.TabIndex = 0
-        Me.InsideAppBtn.Text = "Open Editor Window inside Application"
-        Me.InsideAppBtn.UseVisualStyleBackColor = True
+        Me.Button2.Location = New System.Drawing.Point(241, 180)
+        Me.Button2.Name = "Button2"
+        Me.Button2.Size = New System.Drawing.Size(102, 23)
+        Me.Button2.TabIndex = 15
+        Me.Button2.Text = "Close and Save"
+        Me.Button2.UseVisualStyleBackColor = True
+        '
+        'Rust_EnableSnipe
+        '
+        Me.Rust_EnableSnipe.AutoSize = True
+        Me.Rust_EnableSnipe.Location = New System.Drawing.Point(9, 65)
+        Me.Rust_EnableSnipe.Name = "Rust_EnableSnipe"
+        Me.Rust_EnableSnipe.Size = New System.Drawing.Size(209, 17)
+        Me.Rust_EnableSnipe.TabIndex = 4
+        Me.Rust_EnableSnipe.Text = "Snipe on main Token / Enable Sniping"
+        Me.Rust_EnableSnipe.UseVisualStyleBackColor = True
+        '
+        'Label6
+        '
+        Me.Label6.AutoSize = True
+        Me.Label6.Location = New System.Drawing.Point(6, 38)
+        Me.Label6.Name = "Label6"
+        Me.Label6.Size = New System.Drawing.Size(111, 13)
+        Me.Label6.TabIndex = 3
+        Me.Label6.Text = "Webhook (advanced)"
+        '
+        'Rust_WebHook
+        '
+        Me.Rust_WebHook.Location = New System.Drawing.Point(123, 35)
+        Me.Rust_WebHook.Name = "Rust_WebHook"
+        Me.Rust_WebHook.Size = New System.Drawing.Size(220, 20)
+        Me.Rust_WebHook.TabIndex = 2
+        '
+        'Label5
+        '
+        Me.Label5.AutoSize = True
+        Me.Label5.Location = New System.Drawing.Point(6, 12)
+        Me.Label5.Name = "Label5"
+        Me.Label5.Size = New System.Drawing.Size(38, 13)
+        Me.Label5.TabIndex = 1
+        Me.Label5.Text = "Token"
+        '
+        'Rust_Token
+        '
+        Me.Rust_Token.Location = New System.Drawing.Point(50, 9)
+        Me.Rust_Token.Name = "Rust_Token"
+        Me.Rust_Token.Size = New System.Drawing.Size(293, 20)
+        Me.Rust_Token.TabIndex = 0
+        '
+        'PythonSniperTab
+        '
+        Me.PythonSniperTab.Controls.Add(Me.Label11)
+        Me.PythonSniperTab.Controls.Add(Me.Button7)
+        Me.PythonSniperTab.Controls.Add(Me.Button4)
+        Me.PythonSniperTab.Controls.Add(Me.Label8)
+        Me.PythonSniperTab.Controls.Add(Me.Python_Token)
+        Me.PythonSniperTab.Location = New System.Drawing.Point(4, 22)
+        Me.PythonSniperTab.Name = "PythonSniperTab"
+        Me.PythonSniperTab.Size = New System.Drawing.Size(349, 209)
+        Me.PythonSniperTab.TabIndex = 2
+        Me.PythonSniperTab.Text = "Python based Sniper"
+        Me.PythonSniperTab.UseVisualStyleBackColor = True
+        '
+        'Label11
+        '
+        Me.Label11.AutoSize = True
+        Me.Label11.Location = New System.Drawing.Point(6, 164)
+        Me.Label11.Name = "Label11"
+        Me.Label11.Size = New System.Drawing.Size(201, 13)
+        Me.Label11.TabIndex = 19
+        Me.Label11.Text = "Restart the Nitro Sniper to apply changes"
+        '
+        'Button7
+        '
+        Me.Button7.Location = New System.Drawing.Point(9, 180)
+        Me.Button7.Name = "Button7"
+        Me.Button7.Size = New System.Drawing.Size(140, 23)
+        Me.Button7.TabIndex = 17
+        Me.Button7.Text = "Edit manually"
+        Me.SettingsTip.SetToolTip(Me.Button7, "Let's you change the config file manually, by opening notepad or any program of y" &
+        "our choice." & Global.Microsoft.VisualBasic.ChrW(13) & Global.Microsoft.VisualBasic.ChrW(10))
+        Me.Button7.UseVisualStyleBackColor = True
+        '
+        'Button4
+        '
+        Me.Button4.Location = New System.Drawing.Point(241, 180)
+        Me.Button4.Name = "Button4"
+        Me.Button4.Size = New System.Drawing.Size(102, 23)
+        Me.Button4.TabIndex = 15
+        Me.Button4.Text = "Close and Save"
+        Me.Button4.UseVisualStyleBackColor = True
+        '
+        'Label8
+        '
+        Me.Label8.AutoSize = True
+        Me.Label8.Location = New System.Drawing.Point(6, 12)
+        Me.Label8.Name = "Label8"
+        Me.Label8.Size = New System.Drawing.Size(38, 13)
+        Me.Label8.TabIndex = 3
+        Me.Label8.Text = "Token"
+        '
+        'Python_Token
+        '
+        Me.Python_Token.Location = New System.Drawing.Point(50, 9)
+        Me.Python_Token.Name = "Python_Token"
+        Me.Python_Token.Size = New System.Drawing.Size(293, 20)
+        Me.Python_Token.TabIndex = 2
         '
         'SettingsTip
         '
@@ -375,46 +386,48 @@ Partial Class DefaultProgramsSettings
         Me.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen
         Me.Text = "Settings"
         Me.TabControl1.ResumeLayout(False)
-        Me.DefaultProgramsTab.ResumeLayout(False)
-        Me.DefaultProgramsTab.PerformLayout()
-        CType(Me.PictureBox4, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox3, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox2, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox1, System.ComponentModel.ISupportInitialize).EndInit()
-        Me.WindowMgmntTab.ResumeLayout(False)
-        Me.WindowMgmntTab.PerformLayout()
-        CType(Me.PictureBox5, System.ComponentModel.ISupportInitialize).EndInit()
-        CType(Me.PictureBox6, System.ComponentModel.ISupportInitialize).EndInit()
+        Me.SniperSettingTabs.ResumeLayout(False)
+        Me.TabControl2.ResumeLayout(False)
+        Me.GoSniperTab.ResumeLayout(False)
+        Me.GoSniperTab.PerformLayout()
+        Me.RustSniperTab.ResumeLayout(False)
+        Me.RustSniperTab.PerformLayout()
+        Me.PythonSniperTab.ResumeLayout(False)
+        Me.PythonSniperTab.PerformLayout()
         CType(Me.PictureBox7, System.ComponentModel.ISupportInitialize).EndInit()
         Me.ResumeLayout(False)
         Me.PerformLayout()
 
     End Sub
-
-    Friend WithEvents Label1 As Label
-    Friend WithEvents SystemDefinedBtn As RadioButton
-    Friend WithEvents NotepadSystem32Btn As RadioButton
-    Friend WithEvents NotepadWinBtn As RadioButton
-    Friend WithEvents Writebtn As RadioButton
-    Friend WithEvents Label2 As Label
     Friend WithEvents TabControl1 As TabControl
-    Friend WithEvents DefaultProgramsTab As TabPage
-    Friend WithEvents WindowMgmntTab As TabPage
-    Friend WithEvents Label3 As Label
-    Friend WithEvents OutsideAppBtn As RadioButton
-    Friend WithEvents InsideAppBtn As RadioButton
-    Friend WithEvents Label4 As Label
     Friend WithEvents SettingsTip As ToolTip
-    Friend WithEvents PictureBox4 As PictureBox
-    Friend WithEvents PictureBox3 As PictureBox
-    Friend WithEvents PictureBox2 As PictureBox
-    Friend WithEvents PictureBox1 As PictureBox
-    Friend WithEvents PictureBox5 As PictureBox
-    Friend WithEvents PictureBox6 As PictureBox
-    Friend WithEvents NF3 As Label
-    Friend WithEvents NF2 As Label
-    Friend WithEvents NF1 As Label
     Friend WithEvents PictureBox7 As PictureBox
-    Friend WithEvents CloseSettingsBtn As Button
-    Friend WithEvents Button1 As Button
+    Friend WithEvents SniperSettingTabs As TabPage
+    Friend WithEvents TabControl2 As TabControl
+    Friend WithEvents RustSniperTab As TabPage
+    Friend WithEvents Rust_EnableSnipe As CheckBox
+    Friend WithEvents Label6 As Label
+    Friend WithEvents Rust_WebHook As TextBox
+    Friend WithEvents Label5 As Label
+    Friend WithEvents Rust_Token As TextBox
+    Friend WithEvents GoSniperTab As TabPage
+    Friend WithEvents Go_EnableGiveaway As CheckBox
+    Friend WithEvents Label10 As Label
+    Friend WithEvents Go_CooldownInHours As TextBox
+    Friend WithEvents Label9 As Label
+    Friend WithEvents Go_MaxNitroBeforeCooldown As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Go_Token As TextBox
+    Friend WithEvents PythonSniperTab As TabPage
+    Friend WithEvents Label8 As Label
+    Friend WithEvents Python_Token As TextBox
+    Friend WithEvents Button2 As Button
+    Friend WithEvents Button3 As Button
+    Friend WithEvents Button4 As Button
+    Friend WithEvents Button5 As Button
+    Friend WithEvents Button6 As Button
+    Friend WithEvents Button7 As Button
+    Friend WithEvents Label2 As Label
+    Friend WithEvents Label1 As Label
+    Friend WithEvents Label11 As Label
 End Class

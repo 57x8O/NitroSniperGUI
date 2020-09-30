@@ -1,28 +1,28 @@
 ﻿Option Explicit On
 Option Strict On
-Imports System.Runtime.InteropServices, System.Management, AutoUpdaterDotNET
+Imports System.Runtime.InteropServices, System.Management, AutoUpdaterDotNET, Newtonsoft.Json, Newtonsoft.Json.Linq
 Public Class MainMdiContainerForm
     'Initialize MDI Variables
-    Private Const WM_SYSCOMMAND As Integer = &H112
-    Private Const SC_MINIMIZE As Integer = &HF020
-    Private Const SC_MAXIMIZE As Integer = &HF030
-    Dim rct As RECT
+    Public Const WM_SYSCOMMAND As Integer = &H112
+    Public Const SC_MINIMIZE As Integer = &HF020
+    Public Const SC_MAXIMIZE As Integer = &HF030
+    Public rct As RECT
 
     'Initialize Process Variables
-    Dim p As Process
-    Dim p2 As Process
-    Dim p3 As Process
-    Dim c1 As Process
-    Dim c2 As Process
-    Dim c3 As Process
+    Private p As Process
+    Private p2 As Process
+    Private p3 As Process
+    Public c1 As Process 'Rust Sniper Config
+    Public c2 As Process 'Go Sniper Config
+    Public c3 As Process 'Python Sniper Config
     <DllImport("user32.dll")>
     Public Shared Function SetParent(ByVal hWndChild As IntPtr, ByVal hWndNewParent As IntPtr) As Integer
     End Function
     <DllImport("user32.dll")>
-    Private Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
+    Public Shared Function SendMessage(ByVal hWnd As IntPtr, ByVal Msg As Integer, ByVal wParam As Integer, ByVal lParam As Integer) As Integer
     End Function
     <DllImport("user32.dll")>
-    Private Shared Function GetWindowRect(ByVal hWnd As HandleRef, ByRef lpRect As RECT) As Boolean
+    Public Shared Function GetWindowRect(ByVal hWnd As HandleRef, ByRef lpRect As RECT) As Boolean
     End Function
     <StructLayout(LayoutKind.Sequential)>
     Public Structure RECT
@@ -39,7 +39,14 @@ Public Class MainMdiContainerForm
     Private Async Function Form1_LoadAsync(sender As Object, e As EventArgs) As Task Handles MyBase.Load
         Application.DoEvents()
 
+        'Set Theme
         Application.VisualStyleState = VisualStyles.VisualStyleState.ClientAreaEnabled
+
+        'Set and Show BallonTip
+        StatusIcon.BalloonTipIcon = ToolTipIcon.Info
+        StatusIcon.BalloonTipTitle = "Newtonsoft.JSON initialized."
+        StatusIcon.BalloonTipText = "Version: " + FileVersionInfo.GetVersionInfo(Application.StartupPath + "\Newtonsoft.Json.dll").FileVersion.ToString
+        StatusIcon.ShowBalloonTip(7000)
 
         'Initialize Updater
         Dim currentDirectory As New IO.DirectoryInfo(Environment.CurrentDirectory)
@@ -52,9 +59,11 @@ Public Class MainMdiContainerForm
         AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
 
         Await Task.Delay(1000)
+
+
     End Function
 #Enable Warning BC42359
-    Sub KillChildrenProcessesOf(ByVal parentProcessId As UInteger)
+    Public Sub KillChildrenProcessesOf(ByVal parentProcessId As UInteger)
         Dim searcher As New ManagementObjectSearcher(
         "SELECT * " &
         "FROM Win32_Process " &
@@ -75,34 +84,80 @@ Public Class MainMdiContainerForm
         End If
     End Sub
     Private Sub Form1_Resize(sender As Object, e As EventArgs) Handles Me.Resize
+        'Resize and Maximize Nitro Snipers when the GUI get's resized
         If Not p Is Nothing Then
             Try
                 'Go-based Sniper
                 SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
                 SendMessage(p.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
-
+            Catch ex As Exception
+                Status.Text = ex.Message
+            End Try
+        End If
+        If Not p2 Is Nothing Then
+            Try
                 'Rust based Sniper
                 SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
                 SendMessage(p2.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
-
+            Catch ex As Exception
+                Status.Text = ex.Message
+            End Try
+        End If
+        If Not p3 Is Nothing Then
+            Try
                 'Python based Sniper
                 SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MINIMIZE, 0)
                 SendMessage(p3.MainWindowHandle, WM_SYSCOMMAND, SC_MAXIMIZE, 0)
             Catch ex As Exception
                 Status.Text = ex.Message
             End Try
-
         End If
     End Sub
     Private Sub Form1_FormClosing(sender As Object, e As FormClosingEventArgs) Handles Me.FormClosing
+        'Get rid of the Icon in the systray
+        StatusIcon.Dispose()
+
+        'Try to kill Sniper with Process p
         Try
             If p Is Nothing Then
             Else
                 'Kill remaining snipers
                 p.Kill()
-                KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
                 KillChildrenProcessesOf(CUInt(p.Id))
+
+                For Each prog As Process In Process.GetProcesses
+                    If prog.ProcessName = "conhost" Then
+                        prog.Kill()
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+        End Try
+
+        'Try to kill Sniper with Process p2
+        Try
+            If p2 Is Nothing Then
+            Else
+                'Kill remaining snipers
+                p2.Kill()
                 KillChildrenProcessesOf(CUInt(p2.Id))
+
+                For Each prog As Process In Process.GetProcesses
+                    If prog.ProcessName = "conhost" Then
+                        prog.Kill()
+                    End If
+                Next
+            End If
+        Catch ex As Exception
+        End Try
+
+        'Try to kill Sniper with Process p3
+        Try
+            If p3 Is Nothing Then
+            Else
+                'Kill remaining snipers
+                p3.Kill()
+
                 KillChildrenProcessesOf(CUInt(p3.Id))
 
                 For Each prog As Process In Process.GetProcesses
@@ -111,6 +166,14 @@ Public Class MainMdiContainerForm
                     End If
                 Next
             End If
+
+
+        Catch ex As Exception
+        End Try
+
+        'Try to kill the GUI Process
+        Try
+            KillChildrenProcessesOf(CUInt(Process.GetCurrentProcess.Id))
         Catch ex As Exception
         End Try
     End Sub
@@ -227,7 +290,7 @@ Public Class MainMdiContainerForm
     Private Sub StartGoBasedNitroSniperToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles StartGoBasedNitroSniperToolStripMenuItem.Click
         GoNitroSniperTitleBarWorkAround()
     End Sub
-    Private Sub RustNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles RustNitroSniperConfigToolStripMenuItem.Click
+    Private Sub RustNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If My.Settings.OpenOutside = True Then
             Try
                 If My.Settings.UseSystem = True Then
@@ -307,7 +370,13 @@ Public Class MainMdiContainerForm
             End Try
         End If
     End Sub
-    Private Async Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles GoNitroSniperConfigToolStripMenuItem.Click
+    Private Async Sub GoNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs)
+
+
+        Dim JSONFile As String = IO.File.ReadAllText(Application.StartupPath + "\token.json")
+        Dim JSONObject As JObject = JObject.Parse(JSONFile)
+        MsgBox(JSONObject.SelectToken("token").ToString)
+
         If My.Settings.OpenOutside = True Then
             Try
                 If My.Settings.UseSystem = True Then
@@ -328,9 +397,12 @@ Public Class MainMdiContainerForm
                     IO.File.Create(Application.StartupPath + "\token.json").Dispose()
 
                     ' Add text to the file.
-                    Dim objWriter As New IO.StreamWriter(Application.StartupPath + "\token.json", True)
-                    objWriter.WriteLine("{ ""token"": ""token here"" }")
-                    objWriter.Close()
+                    'Dim objWriter As New IO.StreamWriter(Application.StartupPath + "\token.json", True)
+                    'objWriter.WriteLine("{ ""token"": ""token here"" }")
+                    'objWriter.Close()
+
+
+
                     MsgBox("Config File created. Try to open the config again.", CType(vbInformation + vbOKOnly, MsgBoxStyle), "Config File")
 
                 End If
@@ -665,7 +737,7 @@ Public Class MainMdiContainerForm
             StatusBar.Value = 0
         End Try
     End Sub
-    Private Async Sub PythonNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles PythonNitroSniperConfigToolStripMenuItem.Click
+    Private Async Sub PythonNitroSniperConfigToolStripMenuItem_Click(sender As Object, e As EventArgs)
         If My.Settings.OpenOutside = True Then
             Try
                 If My.Settings.UseSystem = True Then
@@ -775,7 +847,6 @@ Public Class MainMdiContainerForm
             End Try
         End If
     End Sub
-
     Private Async Sub CheckForUpdatesBtn_Click(sender As Object, e As EventArgs) Handles CheckForUpdatesBtn.Click
         'Initialize manual Updater
         Dim currentDirectory As New IO.DirectoryInfo(Environment.CurrentDirectory)
@@ -789,5 +860,29 @@ Public Class MainMdiContainerForm
         AutoUpdater.Start("https://github.com/PeterStrick/NitroSniperGUI/raw/master/UpdaterXML.xml")
 
         Await Task.Delay(1000)
+    End Sub
+    Private Sub Status_DoubleClick(sender As Object, e As EventArgs) Handles Status.DoubleClick, Status.Click
+        CheckIfVisualStudioIsRunning()
+    End Sub
+    Private Sub CheckIfVisualStudioIsRunning()
+        Dim p() As Process
+        p = Process.GetProcessesByName("devenv")
+        If p.Count > 0 Then
+            StartDebugMode()
+        Else
+        End If
+    End Sub
+    Private Sub StartDebugMode()
+        MsgBox("Debug mode activated.")
+        MsgBox("Showing JSON Test Form", CType(vbInformation + vbOKOnly, MsgBoxStyle), "testfrom")
+        Testform.Show()
+        Close()
+    End Sub
+    Private Sub StatusIcon_DoubleClick(sender As Object, e As EventArgs) Handles StatusIcon.DoubleClick
+        MsgBox(FileVersionInfo.GetVersionInfo(Application.StartupPath + "\Newtonsoft.Json.dll").ToString, CType(vbInformation + vbOKOnly, MsgBoxStyle), "JSON.Net - Newtonsoft.JSON")
+    End Sub
+    Private Sub StatusIcon_BalloonTipClicked(sender As Object, e As EventArgs) Handles StatusIcon.BalloonTipClicked
+        TopMost = True
+        TopMost = False
     End Sub
 End Class
