@@ -95,16 +95,6 @@ Public Class DefaultProgramsSettings
         End Try
 
     End Sub
-    Private Sub InisdeAppBtn_CheckedChanged(sender As Object, e As EventArgs)
-        My.Settings.OpenInsde = True
-        My.Settings.OpenOutside = False
-        My.Settings.Save()
-    End Sub
-    Private Sub OutsideAppBtn_CheckedChanged(sender As Object, e As EventArgs)
-        My.Settings.OpenInsde = False
-        My.Settings.OpenOutside = True
-        My.Settings.Save()
-    End Sub
     Private Sub CloseSettingsBtn_Click(sender As Object, e As EventArgs) Handles Button4.Click, Button3.Click, Button2.Click
         'Save Rust Settings
         Try
