@@ -13,9 +13,10 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x64-orange)](https://github.com/PeterStrick/NitroSniperGUI)
 ## To-Do
 - [x] Add Snipers 
-- [ ] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON (70% done)
-- [ ] Update to the New Version of Nitro Sniper GUI that requires said config rewrites
-- [ ] Move Config to Nitro Sniper GUI Settings instead of opening a config editor window (90% done)
+- [x] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON
+- [x] Update to the New Version of Nitro Sniper GUI that requires said config rewrites
+- [x] Move Config to Nitro Sniper GUI Settings instead of opening a config editor window
+
 ## Antivirus Info
 If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
 
