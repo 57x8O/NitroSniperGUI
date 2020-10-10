@@ -10,7 +10,7 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 
 | Downloads | License | Last Commit | Platform
 | :----------------: | :----------------: | :----------------: | :-------:
-| [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x86-orange)](https://github.com/PeterStrick/NitroSniperGUI)
+| [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x86%20/%20x64-orange)](https://github.com/PeterStrick/NitroSniperGUI)
 ## To-Do
 - [x] Add Snipers 
 - [x] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON
