@@ -31,6 +31,7 @@ The Python and Discord Nitro Icons were found by simply making a Google search.
 ## Disclaimer
 This can get your account **permanently** banned, [_**or sometimes locked**_](https://github.com/PeterStrick/NitroSniperGUI/issues/2) if you run multiple instances at the same time and/or claim too much Nitros in a short amount of time.
 I and the owners of the Nitro Snipers are **___not___** responsible in any **___damages or bans___** that may occur when using this application. **Use it at your own risk.**
+It is recommended to use a alt account for nitro sniping and not your main. 
 
 ## Did I get confirmation/permission to include the Nitro Snipers in my project?
 Yes, indeed I did. See here:
