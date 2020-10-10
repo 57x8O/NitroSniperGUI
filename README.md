@@ -16,6 +16,7 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 - [x] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON
 - [x] Update to the New Version of Nitro Sniper GUI that requires said config rewrites
 - [x] Move Config to Nitro Sniper GUI Settings instead of opening a config editor window
+- [ ] Mabe try to make the GUI and snipers Linux/Wine compatible, because currently they aren't
 
 ## Antivirus Info
 If your Antivirus flags this program as a Virus, please head over to [here](https://github.com/PeterStrick/NitroSniperGUI/issues/1)
