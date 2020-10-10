@@ -9,13 +9,10 @@ A more friendly User Interface for the following Nitro Snipers, that let´s you 
 | Nitro Sniper GUI                                                                                 | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.svg)](https://github.com/PeterStrick/NitroSniperGUI/releases)
 | [Nitro Sniper GUI for Linux (Mono)](NitroSniperGUI.Linux_Mono)                                   | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.Linux_Mono.svg)](https://github.com/PeterStrick/https://github.com/PeterStrick/NitroSniperGUI.Linux_Mono/releases) | [![Latest Release](https://img.shields.io/github/v/release/PeterStrick/NitroSniperGUI.Linux_Mono.svg)](https://github.com/PeterStrick/NitroSniperGUI.Linux_Mono/releases)
 
-
-
-
-
 | Downloads | License | Last Commit | Platform
 | :----------------: | :----------------: | :----------------: | :-------:
 | [![Total](https://img.shields.io/github/downloads/PeterStrick/NitroSniperGUI/total)](https://github.com/PeterStrick/NitroSniperGUI/releases/latest) | [![License](https://img.shields.io/github/license/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI/blob/master/LICENSE) | [![Last commit](https://img.shields.io/github/last-commit/PeterStrick/NitroSniperGUI)](https://github.com/PeterStrick/NitroSniperGUI) | [![Platform](https://img.shields.io/badge/platform-Windows%20x86%20/%20x64-orange)](https://github.com/PeterStrick/NitroSniperGUI)
+
 ## To-Do
 - [x] Add Snipers 
 - [x] Change how to GUI handles Sniper Config Files to use Newtonsoft.JSON
